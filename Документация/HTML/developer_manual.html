@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Руководство разработчика &mdash; Soundboard — документация</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=aa56e9b3" />
+
+  
+    <link rel="shortcut icon" href="_static/icon.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=ab5a9b04"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=cd1d70c9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Примеры использования" href="examples.html" />
+    <link rel="prev" title="Руководство пользователя" href="user_manual.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Soundboard
+              <img src="_static/icon.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Архитектура приложения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id2">Общая схема</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id3">Взаимодействие слоёв</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id4">Используемые паттерны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id5">Структура модулей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id6">Модель данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id7">Диаграмма классов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id8">Поток данных при запуске звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id9">Хранение и восстановление</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functionality.html">Функциональность</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id2">Главный экран</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id3">Воспроизведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id4">Перемотка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id5">Зацикливание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id6">Громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id7">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id8">Поиск и категории</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id10">Форматы и ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Руководство пользователя</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id2">Назначение программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id3">Условия выполнения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id4">Запуск программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id5">Добавление звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id6">Запуск и остановка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id7">Перемотка, зацикливание и громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id8">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id10">Настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id11">Сохранение данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id12">Сообщения и действия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id13">Частые проблемы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id14">Завершение работы</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Руководство разработчика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Стек технологий</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Структура проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Настройка окружения (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Сборка Windows-приложения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Тесты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">Документация Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Требования к коду</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Архитектурные правила</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Как добавить новую функцию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Релизный чек-лист</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">Передача знаний новому разработчику</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">Известные ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Примеры использования</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id2">Пользовательские сценарии</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id3">Работа с моделью из кода</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id4">Настройки приложения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API-справочник</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-models">Модель данных</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#models.Sound"><code class="docutils literal notranslate"><span class="pre">Sound</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.name"><code class="docutils literal notranslate"><span class="pre">Sound.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.path"><code class="docutils literal notranslate"><span class="pre">Sound.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.hotkey"><code class="docutils literal notranslate"><span class="pre">Sound.hotkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.volume"><code class="docutils literal notranslate"><span class="pre">Sound.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.is_loop"><code class="docutils literal notranslate"><span class="pre">Sound.is_loop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.category"><code class="docutils literal notranslate"><span class="pre">Sound.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.id"><code class="docutils literal notranslate"><span class="pre">Sound.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.to_dict"><code class="docutils literal notranslate"><span class="pre">Sound.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#models.Sound.from_dict"><code class="docutils literal notranslate"><span class="pre">Sound.from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-config_repository">Хранение конфигурации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#config_repository.default_config_path"><code class="docutils literal notranslate"><span class="pre">default_config_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#config_repository.ConfigRepository"><code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#config_repository.ConfigRepository.instance"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#config_repository.ConfigRepository.load"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#config_repository.ConfigRepository.save"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-sound_manager">Библиотека звуков</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#sound_manager.SoundManager"><code class="docutils literal notranslate"><span class="pre">SoundManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.get"><code class="docutils literal notranslate"><span class="pre">SoundManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.find_by_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.find_by_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.categories"><code class="docutils literal notranslate"><span class="pre">SoundManager.categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.next_free_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.next_free_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.add"><code class="docutils literal notranslate"><span class="pre">SoundManager.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.remove"><code class="docutils literal notranslate"><span class="pre">SoundManager.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.update"><code class="docutils literal notranslate"><span class="pre">SoundManager.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.set_settings"><code class="docutils literal notranslate"><span class="pre">SoundManager.set_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#sound_manager.SoundManager.save"><code class="docutils literal notranslate"><span class="pre">SoundManager.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-audio_engine">Аудиодвижок</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#audio_engine.AudioEngine"><code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.instance"><code class="docutils literal notranslate"><span class="pre">AudioEngine.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.play"><code class="docutils literal notranslate"><span class="pre">AudioEngine.play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.stop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.stop_all"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.is_playing"><code class="docutils literal notranslate"><span class="pre">AudioEngine.is_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.position"><code class="docutils literal notranslate"><span class="pre">AudioEngine.position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.load_duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.load_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.seek"><code class="docutils literal notranslate"><span class="pre">AudioEngine.seek()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.set_loop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.set_master_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.set_sound_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.invalidate"><code class="docutils literal notranslate"><span class="pre">AudioEngine.invalidate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#audio_engine.AudioEngine.shutdown"><code class="docutils literal notranslate"><span class="pre">AudioEngine.shutdown()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-keys">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#keys.from_qt_event"><code class="docutils literal notranslate"><span class="pre">from_qt_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#keys.from_pynput"><code class="docutils literal notranslate"><span class="pre">from_pynput()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#keys.pretty"><code class="docutils literal notranslate"><span class="pre">pretty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#hotkey_manager.HotkeyManager"><code class="docutils literal notranslate"><span class="pre">HotkeyManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#hotkey_manager.HotkeyManager.active"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#hotkey_manager.HotkeyManager.start"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#hotkey_manager.HotkeyManager.stop"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-main_window">Интерфейс и диалоги</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.NoWheelSlider"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.NoWheelSlider.wheelEvent"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.SeekSlider"><code class="docutils literal notranslate"><span class="pre">SeekSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SeekSlider.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SeekSlider.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseMoveEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SeekSlider.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseReleaseEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.ElidedLabel"><code class="docutils literal notranslate"><span class="pre">ElidedLabel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.ElidedLabel.set_full_text"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.set_full_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.ElidedLabel.resizeEvent"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.resizeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.CardScrollArea"><code class="docutils literal notranslate"><span class="pre">CardScrollArea</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.CardScrollArea.PIXELS_PER_NOTCH"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.PIXELS_PER_NOTCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.CardScrollArea.wheelEvent"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.CategoryButton"><code class="docutils literal notranslate"><span class="pre">CategoryButton</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.CategoryButton.currentText"><code class="docutils literal notranslate"><span class="pre">CategoryButton.currentText()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.CategoryButton.set_items"><code class="docutils literal notranslate"><span class="pre">CategoryButton.set_items()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.Logo"><code class="docutils literal notranslate"><span class="pre">Logo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.Logo.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">Logo.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.Logo.paintEvent"><code class="docutils literal notranslate"><span class="pre">Logo.paintEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.SoundCard"><code class="docutils literal notranslate"><span class="pre">SoundCard</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SoundCard.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.set_playing"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.set_volume"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundCard.update_from_sound"><code class="docutils literal notranslate"><span class="pre">SoundCard.update_from_sound()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.SoundsPage"><code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.cards"><code class="docutils literal notranslate"><span class="pre">SoundsPage.cards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.now_rows"><code class="docutils literal notranslate"><span class="pre">SoundsPage.now_rows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.resizeEvent"><code class="docutils literal notranslate"><span class="pre">SoundsPage.resizeEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.set_categories"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.populate"><code class="docutils literal notranslate"><span class="pre">SoundsPage.populate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.render"><code class="docutils literal notranslate"><span class="pre">SoundsPage.render()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.sync_sound"><code class="docutils literal notranslate"><span class="pre">SoundsPage.sync_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.set_master_volume"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.mark_started"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.SoundsPage.mark_finished"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_finished()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main_window.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.show_main"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.show_library"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_library()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.refresh"><code class="docutils literal notranslate"><span class="pre">MainWindow.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.toggle"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.on_card_clicked"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_card_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.on_started"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.on_finished"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_finished()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.on_progress"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.seek_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.seek_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.set_sound_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.set_sound_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.preview_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.commit_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.preview_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.commit_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.handle_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.handle_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.keyPressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.on_global_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_global_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.add_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.change_hotkey"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.rename_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.rename_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.change_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.toggle_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.remove_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.show_context_menu"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_context_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.open_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.apply_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#main_window.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#dialogs.HotkeyEdit"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeyEdit.set_key"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.set_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeyEdit.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.keyPressEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#dialogs.AddSoundDialog"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.choose_file"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.choose_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.set_path"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.set_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.dragEnterEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dragEnterEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.dropEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dropEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.validate"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.AddSoundDialog.values"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#dialogs.HotkeyDialog"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeyDialog.validate"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeyDialog.key"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.key()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#dialogs.SettingsDialog"><code class="docutils literal notranslate"><span class="pre">SettingsDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.SettingsDialog.values"><code class="docutils literal notranslate"><span class="pre">SettingsDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#dialogs.HotkeysListDialog"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeysListDialog.refresh"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api.html#dialogs.HotkeysListDialog.assign"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.assign()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-theme">Тема оформления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-main">Точка входа</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main.resource_path"><code class="docutils literal notranslate"><span class="pre">resource_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Поддержка и развитие проекта</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id2">Процесс поддержки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id3">Бэклог продукта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id4">Отслеживание ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id5">Известные ограничения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id6">Обратная связь</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id7">Политика версий</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">История версий</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">1.3 — документация и поддержка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">1.2 — интерфейс и кроссплатформенность</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#mvp">1.1 — MVP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">1.0 — прототип</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Soundboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Руководство разработчика</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/developer_manual.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>Руководство разработчика<a class="headerlink" href="#id1" title="Ссылка на этот заголовок"></a></h1>
+<section id="id2">
+<h2>Стек технологий<a class="headerlink" href="#id2" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p>Python 3.10+ (проверено на 3.12);</p></li>
+<li><p>PyQt6 — интерфейс, сигналы и слоты;</p></li>
+<li><p>pygame.mixer — воспроизведение и миксирование звука;</p></li>
+<li><p>pynput — глобальные горячие клавиши;</p></li>
+<li><p>JSON — хранение библиотеки и настроек;</p></li>
+<li><p>PyInstaller — сборка Windows-приложения;</p></li>
+<li><p>Sphinx + sphinx-rtd-theme — документация;</p></li>
+<li><p>Git — контроль версий.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Структура проекта<a class="headerlink" href="#id3" title="Ссылка на этот заголовок"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>soundboard/
+├── .venv/                  # виртуальное окружение Python
+├── Код/                    # исходный код приложения
+│   ├── main.py             # точка входа
+│   ├── main_window.py      # интерфейс и контроллер
+│   ├── audio_engine.py     # аудиодвижок
+│   ├── sound_manager.py    # библиотека звуков
+│   ├── config_repository.py# JSON-хранилище
+│   ├── models.py           # модель Sound
+│   ├── dialogs.py          # диалоги
+│   ├── hotkey_manager.py   # глобальные клавиши
+│   ├── keys.py             # приведение клавиш
+│   ├── theme.py            # тёмная тема
+│   ├── assets/             # иконка приложения
+│   ├── tests/              # модульные тесты
+│   ├── dist/Soundboard/    # готовая Windows-сборка
+│   ├── build_exe.bat       # сборка exe
+│   ├── README.md           # краткое описание и запуск
+│   └── BACKLOG.md          # бэклог продукта
+└── Документация/
+    ├── HTML/               # собранная Sphinx-документация
+    ├── Sphinx/             # исходники документации
+    ├── Презентация/        # pptx и pdf для защиты
+    └── Отчёт/              # отчёт с приложениями
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h2>Настройка окружения (Windows)<a class="headerlink" href="#windows" title="Ссылка на этот заголовок"></a></h2>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\&lt;</span><span class="n">user</span><span class="p">&gt;\</span><span class="n">Desktop</span><span class="p">\</span><span class="n">soundboard</span>
+<span class="n">py</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
+<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">Код</span><span class="p">\</span><span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Запуск из исходного кода:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">Код</span><span class="p">\</span><span class="n">main</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Сборка Windows-приложения<a class="headerlink" href="#id4" title="Ссылка на этот заголовок"></a></h2>
+<p>Скрипт <code class="docutils literal notranslate"><span class="pre">Код\build_exe.bat</span></code> создаёт папку <code class="docutils literal notranslate"><span class="pre">Код\dist\Soundboard</span></code>
+с <code class="docutils literal notranslate"><span class="pre">Soundboard.exe</span></code> и <code class="docutils literal notranslate"><span class="pre">_internal</span></code>. Используется режим <strong>onedir</strong>:
+приложение не распаковывается во временную папку при каждом запуске
+и работает стабильнее onefile (у onefile возможна ошибка
+«Could not create temporary directory» при ограничениях TEMP
+или антивируса).</p>
+<p>Ручная команда (из папки <code class="docutils literal notranslate"><span class="pre">Код</span></code>):</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">..\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">PyInstaller</span> <span class="p">-</span><span class="n">-noconfirm</span> <span class="p">-</span><span class="n">-clean</span> <span class="p">^</span>
+  <span class="p">-</span><span class="n">-noconsole</span> <span class="p">-</span><span class="n">-onedir</span> <span class="p">-</span><span class="n">-name</span> <span class="n">Soundboard</span> <span class="p">-</span><span class="n">-icon</span> <span class="n">assets</span><span class="p">\</span><span class="n">icon</span><span class="p">.</span><span class="n">ico</span> <span class="p">^</span>
+  <span class="p">-</span><span class="n">-add-data</span> <span class="s2">"assets\icon.png;assets"</span> <span class="p">^</span>
+  <span class="p">-</span><span class="n">-hidden-import</span> <span class="n">pynput</span><span class="p">.</span><span class="n">keyboard</span><span class="p">.</span><span class="n">_win32</span> <span class="p">^</span>
+  <span class="p">-</span><span class="n">-hidden-import</span> <span class="n">pynput</span><span class="p">.</span><span class="n">mouse</span><span class="p">.</span><span class="n">_win32</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Готовую папку <code class="docutils literal notranslate"><span class="pre">dist\Soundboard</span></code> можно копировать на другой компьютер:
+Python и библиотеки на целевой машине не нужны.</p>
+</section>
+<section id="id5">
+<h2>Тесты<a class="headerlink" href="#id5" title="Ссылка на этот заголовок"></a></h2>
+<p>В проекте используются стандартные модульные тесты (<code class="docutils literal notranslate"><span class="pre">unittest</span></code>),
+не требующие дополнительных зависимостей:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">Код</span>
+<span class="p">..\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">unittest</span> <span class="n">discover</span> <span class="n">-s</span> <span class="n">tests</span> <span class="n">-v</span>
+</pre></div>
+</div>
+<p>Тесты проверяют сериализацию модели, сохранение/загрузку конфигурации,
+операции библиотеки, разбор клавиш и аудиодвижок на dummy-драйвере SDL.
+Для аудиотестов устанавливается <code class="docutils literal notranslate"><span class="pre">SDL_AUDIODRIVER=dummy</span></code>.</p>
+</section>
+<section id="sphinx">
+<h2>Документация Sphinx<a class="headerlink" href="#sphinx" title="Ссылка на этот заголовок"></a></h2>
+<p>Исходники находятся в <code class="docutils literal notranslate"><span class="pre">Документация\Sphinx</span></code>, собранный HTML —
+в <code class="docutils literal notranslate"><span class="pre">Документация\HTML</span></code>. Сборка:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="n">Документация</span><span class="p">\</span><span class="n">Sphinx</span>
+<span class="p">..\..\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">..\..\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">sphinx</span> <span class="n">-b</span> <span class="n">html</span> <span class="p">.</span> <span class="p">..\</span><span class="n">HTML</span>
+</pre></div>
+</div>
+<p>Или двойным кликом по <code class="docutils literal notranslate"><span class="pre">build_docs.bat</span></code>. Готовый файл —
+<code class="docutils literal notranslate"><span class="pre">Документация\HTML\index.html</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conf.py</span></code> добавляет каталог <code class="docutils literal notranslate"><span class="pre">Код</span></code> в <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> и включает
+<code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code>, <code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code>, <code class="docutils literal notranslate"><span class="pre">viewcode</span></code>;</p></li>
+<li><p>API-страницы строятся автоматически из docstrings модулей (Google style);</p></li>
+<li><p>архитектура, функциональность, руководства и примеры — обычные RST-страницы;</p></li>
+<li><p>при добавлении нового модуля достаточно добавить <code class="docutils literal notranslate"><span class="pre">automodule</span></code>
+в <code class="docutils literal notranslate"><span class="pre">api.rst</span></code> и краткое описание в <code class="docutils literal notranslate"><span class="pre">architecture.rst</span></code>.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>Требования к коду<a class="headerlink" href="#id6" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p>PEP 8, отступы 4 пробела, длина строки — до 100 символов;</p></li>
+<li><p>у модулей, классов и публичных методов — docstrings;</p></li>
+<li><p>стиль docstrings — Google (<code class="docutils literal notranslate"><span class="pre">Args</span></code>/<code class="docutils literal notranslate"><span class="pre">Returns</span></code>/<code class="docutils literal notranslate"><span class="pre">Raises</span></code>), поддерживается
+расширением <code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code>;</p></li>
+<li><p>интерфейс не работает с pygame напрямую — только через <code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code>;</p></li>
+<li><p>изменения модели сохраняются через <code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code>;</p></li>
+<li><p>новые сигналы и слоты документируются и связываются в <code class="docutils literal notranslate"><span class="pre">MainWindow</span></code>.</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>Архитектурные правила<a class="headerlink" href="#id7" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p><strong>View</strong> (<code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code>, <code class="docutils literal notranslate"><span class="pre">SoundCard</span></code>) не хранит бизнес-состояние;</p></li>
+<li><p><strong>Controller</strong> (<code class="docutils literal notranslate"><span class="pre">MainWindow</span></code>) — единственное место связи UI и движка;</p></li>
+<li><p><strong>Model</strong> (<code class="docutils literal notranslate"><span class="pre">SoundManager</span></code>) не импортирует PyQt6-виджеты;</p></li>
+<li><p><strong>AudioEngine</strong> не знает о библиотеке и интерфейсе;</p></li>
+<li><p><strong>ConfigRepository</strong> отвечает только за JSON;</p></li>
+<li><p>громкость, перемотка и цикл применяются к движку, а модель обновляется
+без пересборки карточек (<code class="docutils literal notranslate"><span class="pre">silent=True</span></code>), чтобы не сбрасывать прокрутку.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h2>Как добавить новую функцию<a class="headerlink" href="#id8" title="Ссылка на этот заголовок"></a></h2>
+<ol class="arabic simple">
+<li><p>Определите, к какому слою относится изменение (модель, движок, UI).</p></li>
+<li><p>Добавьте поле в модель и миграцию конфигурации (значение по умолчанию).</p></li>
+<li><p>Реализуйте логику в соответствующем модуле и покройте тестом.</p></li>
+<li><p>Добавьте элемент управления в интерфейс и свяжите сигнал в <code class="docutils literal notranslate"><span class="pre">MainWindow</span></code>.</p></li>
+<li><p>Обновите документацию (<code class="docutils literal notranslate"><span class="pre">functionality.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">api.rst</span></code>, при необходимости
+руководства) и <code class="docutils literal notranslate"><span class="pre">BACKLOG.md</span></code>.</p></li>
+<li><p>Проверьте сборку exe и запуск на чистой конфигурации.</p></li>
+</ol>
+</section>
+<section id="id9">
+<h2>Релизный чек-лист<a class="headerlink" href="#id9" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p>[ ] все тесты проходят (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">discover</span> <span class="pre">-s</span> <span class="pre">tests</span></code>);</p></li>
+<li><p>[ ] документация собирается без ошибок и предупреждений;</p></li>
+<li><p>[ ] обновлены <code class="docutils literal notranslate"><span class="pre">BACKLOG.md</span></code> и <code class="docutils literal notranslate"><span class="pre">changelog.rst</span></code>;</p></li>
+<li><p>[ ] собрана Windows-папка <code class="docutils literal notranslate"><span class="pre">dist\Soundboard</span></code>;</p></li>
+<li><p>[ ] проверен запуск с чистой конфигурацией;</p></li>
+<li><p>[ ] обновлены отчёт и презентация, если менялись функции.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h2>Передача знаний новому разработчику<a class="headerlink" href="#id10" title="Ссылка на этот заголовок"></a></h2>
+<ol class="arabic simple">
+<li><p>Прочитайте <code class="docutils literal notranslate"><span class="pre">README.md</span></code> и эту страницу — они дают полную картину.</p></li>
+<li><p>Запустите приложение и пройдите сценарий из <code class="docutils literal notranslate"><span class="pre">user_manual.rst</span></code>.</p></li>
+<li><p>Посмотрите <code class="docutils literal notranslate"><span class="pre">architecture.rst</span></code> и <code class="docutils literal notranslate"><span class="pre">api.rst</span></code> — там границы слоёв.</p></li>
+<li><p>Соберите документацию и тесты — это быстрый способ проверить окружение.</p></li>
+<li><p>Начните с задач из <code class="docutils literal notranslate"><span class="pre">BACKLOG.md</span></code> с меткой «good first issue».</p></li>
+<li><p>Ключевые точки кода: <code class="docutils literal notranslate"><span class="pre">MainWindow</span></code> (связи), <code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code> (звук),
+<code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code> (хранение), <code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code> (сетка карточек).</p></li>
+</ol>
+</section>
+<section id="id11">
+<h2>Известные ограничения<a class="headerlink" href="#id11" title="Ссылка на этот заголовок"></a></h2>
+<ul class="simple">
+<li><p>используется аудиоустройство Windows по умолчанию;</p></li>
+<li><p>перемотка длинных MP3 выполняется копированием PCM-фрагмента и может
+занимать десятки миллисекунд;</p></li>
+<li><p>интерфейс только на русском языке;</p></li>
+<li><p>Windows-сборка не подписана, антивирус может запросить подтверждение.</p></li>
+</ul>
+<p>Актуальный список задач и багов — в <code class="docutils literal notranslate"><span class="pre">BACKLOG.md</span></code> и на странице
+<a class="reference internal" href="support.html"><span class="doc">Поддержка и развитие проекта</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="user_manual.html" class="btn btn-neutral float-left" title="Руководство пользователя" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Примеры использования" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2026, Загайнов Н. А.. 
+      <span class="lastupdated">Обновлено: 05.11.2026.
+      </span></p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.wy-nav-content {
+    max-width: 1150px;
+}
+
+.wy-side-nav-search {
+    background-color: #0f1116;
+}
+
+.wy-side-nav-search > a,
+.wy-side-nav-search .wy-dropdown > a {
+    color: #00f0a8;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+    color: #00f0a8;
+}
+
+.rst-content code.literal {
+    color: #0a7a56;
+}
+
+.rst-content .admonition-title {
+    background-color: #00c98d;
+}
+
+.rst-content .note .admonition-title {
+    background-color: #4a9bff;
+}

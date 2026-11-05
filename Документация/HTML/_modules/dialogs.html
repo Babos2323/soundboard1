@@ -1,0 +1,749 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dialogs &mdash; Soundboard — документация</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=aa56e9b3" />
+
+  
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=ab5a9b04"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=cd1d70c9"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Soundboard
+              <img src="../_static/icon.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Архитектура приложения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id2">Общая схема</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id3">Взаимодействие слоёв</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id4">Используемые паттерны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id5">Структура модулей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id6">Модель данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id7">Диаграмма классов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id8">Поток данных при запуске звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id9">Хранение и восстановление</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../functionality.html">Функциональность</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id2">Главный экран</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id3">Воспроизведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id4">Перемотка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id5">Зацикливание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id6">Громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id7">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id8">Поиск и категории</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id10">Форматы и ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual.html">Руководство пользователя</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id2">Назначение программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id3">Условия выполнения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id4">Запуск программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id5">Добавление звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id6">Запуск и остановка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id7">Перемотка, зацикливание и громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id8">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id10">Настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id11">Сохранение данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id12">Сообщения и действия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id13">Частые проблемы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id14">Завершение работы</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual.html">Руководство разработчика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id2">Стек технологий</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id3">Структура проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#windows">Настройка окружения (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id4">Сборка Windows-приложения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id5">Тесты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#sphinx">Документация Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id6">Требования к коду</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id7">Архитектурные правила</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id8">Как добавить новую функцию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id9">Релизный чек-лист</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id10">Передача знаний новому разработчику</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id11">Известные ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Примеры использования</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id2">Пользовательские сценарии</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id3">Работа с моделью из кода</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id4">Настройки приложения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API-справочник</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-models">Модель данных</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#models.Sound"><code class="docutils literal notranslate"><span class="pre">Sound</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.name"><code class="docutils literal notranslate"><span class="pre">Sound.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.path"><code class="docutils literal notranslate"><span class="pre">Sound.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.hotkey"><code class="docutils literal notranslate"><span class="pre">Sound.hotkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.volume"><code class="docutils literal notranslate"><span class="pre">Sound.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.is_loop"><code class="docutils literal notranslate"><span class="pre">Sound.is_loop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.category"><code class="docutils literal notranslate"><span class="pre">Sound.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.id"><code class="docutils literal notranslate"><span class="pre">Sound.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.to_dict"><code class="docutils literal notranslate"><span class="pre">Sound.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.from_dict"><code class="docutils literal notranslate"><span class="pre">Sound.from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-config_repository">Хранение конфигурации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#config_repository.default_config_path"><code class="docutils literal notranslate"><span class="pre">default_config_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#config_repository.ConfigRepository"><code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.instance"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.load"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.save"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-sound_manager">Библиотека звуков</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#sound_manager.SoundManager"><code class="docutils literal notranslate"><span class="pre">SoundManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.get"><code class="docutils literal notranslate"><span class="pre">SoundManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.find_by_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.find_by_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.categories"><code class="docutils literal notranslate"><span class="pre">SoundManager.categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.next_free_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.next_free_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.add"><code class="docutils literal notranslate"><span class="pre">SoundManager.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.remove"><code class="docutils literal notranslate"><span class="pre">SoundManager.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.update"><code class="docutils literal notranslate"><span class="pre">SoundManager.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.set_settings"><code class="docutils literal notranslate"><span class="pre">SoundManager.set_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.save"><code class="docutils literal notranslate"><span class="pre">SoundManager.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-audio_engine">Аудиодвижок</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#audio_engine.AudioEngine"><code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.instance"><code class="docutils literal notranslate"><span class="pre">AudioEngine.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.play"><code class="docutils literal notranslate"><span class="pre">AudioEngine.play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.stop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.stop_all"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.is_playing"><code class="docutils literal notranslate"><span class="pre">AudioEngine.is_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.position"><code class="docutils literal notranslate"><span class="pre">AudioEngine.position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.load_duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.load_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.seek"><code class="docutils literal notranslate"><span class="pre">AudioEngine.seek()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_loop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_master_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_sound_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.invalidate"><code class="docutils literal notranslate"><span class="pre">AudioEngine.invalidate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.shutdown"><code class="docutils literal notranslate"><span class="pre">AudioEngine.shutdown()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-keys">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.from_qt_event"><code class="docutils literal notranslate"><span class="pre">from_qt_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.from_pynput"><code class="docutils literal notranslate"><span class="pre">from_pynput()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.pretty"><code class="docutils literal notranslate"><span class="pre">pretty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager"><code class="docutils literal notranslate"><span class="pre">HotkeyManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.active"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.start"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.stop"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-main_window">Интерфейс и диалоги</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.NoWheelSlider"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.NoWheelSlider.wheelEvent"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SeekSlider"><code class="docutils literal notranslate"><span class="pre">SeekSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseMoveEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseReleaseEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.ElidedLabel"><code class="docutils literal notranslate"><span class="pre">ElidedLabel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.ElidedLabel.set_full_text"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.set_full_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.ElidedLabel.resizeEvent"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.resizeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.CardScrollArea"><code class="docutils literal notranslate"><span class="pre">CardScrollArea</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CardScrollArea.PIXELS_PER_NOTCH"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.PIXELS_PER_NOTCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CardScrollArea.wheelEvent"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.CategoryButton"><code class="docutils literal notranslate"><span class="pre">CategoryButton</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CategoryButton.currentText"><code class="docutils literal notranslate"><span class="pre">CategoryButton.currentText()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CategoryButton.set_items"><code class="docutils literal notranslate"><span class="pre">CategoryButton.set_items()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.Logo"><code class="docutils literal notranslate"><span class="pre">Logo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.Logo.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">Logo.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.Logo.paintEvent"><code class="docutils literal notranslate"><span class="pre">Logo.paintEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SoundCard"><code class="docutils literal notranslate"><span class="pre">SoundCard</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SoundCard.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_playing"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_volume"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.update_from_sound"><code class="docutils literal notranslate"><span class="pre">SoundCard.update_from_sound()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SoundsPage"><code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.cards"><code class="docutils literal notranslate"><span class="pre">SoundsPage.cards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.now_rows"><code class="docutils literal notranslate"><span class="pre">SoundsPage.now_rows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.resizeEvent"><code class="docutils literal notranslate"><span class="pre">SoundsPage.resizeEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_categories"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.populate"><code class="docutils literal notranslate"><span class="pre">SoundsPage.populate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.render"><code class="docutils literal notranslate"><span class="pre">SoundsPage.render()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.sync_sound"><code class="docutils literal notranslate"><span class="pre">SoundsPage.sync_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_master_volume"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.mark_started"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.mark_finished"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_finished()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_main"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_library"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_library()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.refresh"><code class="docutils literal notranslate"><span class="pre">MainWindow.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.toggle"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_card_clicked"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_card_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_started"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_finished"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_finished()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_progress"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.seek_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.seek_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.set_sound_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.set_sound_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.preview_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.commit_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.preview_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.commit_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.handle_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.handle_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.keyPressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_global_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_global_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.add_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.change_hotkey"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.rename_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.rename_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.change_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.toggle_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.remove_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_context_menu"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_context_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.open_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.apply_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit.set_key"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.set_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.keyPressEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.choose_file"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.choose_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.set_path"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.set_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.dragEnterEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dragEnterEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.dropEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dropEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.validate"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.values"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog.validate"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog.key"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.key()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.SettingsDialog"><code class="docutils literal notranslate"><span class="pre">SettingsDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.SettingsDialog.values"><code class="docutils literal notranslate"><span class="pre">SettingsDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog.refresh"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog.assign"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.assign()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-theme">Тема оформления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-main">Точка входа</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main.resource_path"><code class="docutils literal notranslate"><span class="pre">resource_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Поддержка и развитие проекта</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id2">Процесс поддержки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id3">Бэклог продукта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id4">Отслеживание ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id5">Известные ограничения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id6">Обратная связь</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id7">Политика версий</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">История версий</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">1.3 — документация и поддержка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">1.2 — интерфейс и кроссплатформенность</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#mvp">1.1 — MVP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">1.0 — прототип</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Soundboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Код модуля</a></li>
+      <li class="breadcrumb-item active">dialogs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Исходный код dialogs</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Диалоги: добавление звука, назначение клавиши, настройки, библиотека."""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">PyQt6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PyQt6.QtWidgets</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">QCheckBox</span><span class="p">,</span> <span class="n">QComboBox</span><span class="p">,</span> <span class="n">QDialog</span><span class="p">,</span> <span class="n">QFileDialog</span><span class="p">,</span> <span class="n">QFrame</span><span class="p">,</span> <span class="n">QHBoxLayout</span><span class="p">,</span>
+    <span class="n">QLabel</span><span class="p">,</span> <span class="n">QLineEdit</span><span class="p">,</span> <span class="n">QListWidget</span><span class="p">,</span> <span class="n">QListWidgetItem</span><span class="p">,</span> <span class="n">QMessageBox</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span>
+    <span class="n">QSlider</span><span class="p">,</span> <span class="n">QVBoxLayout</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">keys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_CATEGORY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sound_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">SoundManager</span>
+
+<span class="n">AUDIO_FILTER</span> <span class="o">=</span> <span class="s2">"Аудио (*.wav *.ogg *.mp3);;Все файлы (*)"</span>
+<span class="n">AUDIO_EXT</span> <span class="o">=</span> <span class="p">{</span><span class="s2">".wav"</span><span class="p">,</span> <span class="s2">".ogg"</span><span class="p">,</span> <span class="s2">".mp3"</span><span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_button</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QPushButton</span><span class="p">:</span>
+    <span class="n">btn</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">btn</span><span class="o">.</span><span class="n">setAutoDefault</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">btn</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">btn</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ok_cancel</span><span class="p">(</span><span class="n">ok_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">dialog</span><span class="p">:</span> <span class="n">QDialog</span><span class="p">,</span> <span class="n">ok_slot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">QHBoxLayout</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+    <span class="n">ok</span><span class="p">,</span> <span class="n">cancel</span> <span class="o">=</span> <span class="n">_button</span><span class="p">(</span><span class="n">ok_text</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">),</span> <span class="n">_button</span><span class="p">(</span><span class="s2">"Отмена"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+    <span class="n">ok</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ok_slot</span><span class="p">)</span>
+    <span class="n">cancel</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">dialog</span><span class="o">.</span><span class="n">reject</span><span class="p">)</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">ok</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">cancel</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">row</span>
+
+
+<div class="viewcode-block" id="HotkeyEdit">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyEdit">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HotkeyEdit</span><span class="p">(</span><span class="n">QLineEdit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Поле, которое запоминает нажатую клавишу. Backspace/Delete — очистить."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">placeholder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"Нажмите клавишу для назначения"</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">"hotkeyEdit"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setReadOnly</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="n">placeholder</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<div class="viewcode-block" id="HotkeyEdit.set_key">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyEdit.set_key">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Устанавливает и отображает назначенную клавишу."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">keys</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="HotkeyEdit.keyPressEvent">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyEdit.keyPressEvent">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">keyPressEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">Key_Backspace</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Key</span><span class="o">.</span><span class="n">Key_Delete</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_key</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="n">from_qt_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">"esc"</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">event</span><span class="o">.</span><span class="n">ignore</span><span class="p">()</span>      <span class="c1"># Esc/Enter обрабатывает сам диалог</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AddSoundDialog">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AddSoundDialog</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Диалог добавления нового звука в библиотеку."""</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">:</span> <span class="n">SoundManager</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">manager</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="s2">""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Добавление звука"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setAcceptDrops</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Добавление звука"</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"font-size: 18px;"</span><span class="p">)</span>
+        <span class="n">hint</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Выберите аудиофайл и настройте параметры звука."</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">hint</span><span class="p">)</span>
+
+        <span class="n">zone</span> <span class="o">=</span> <span class="n">QFrame</span><span class="p">()</span>
+        <span class="n">zone</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">"dropZone"</span><span class="p">)</span>
+        <span class="n">zl</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Перетащите файл сюда или выберите"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_label</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">pick</span> <span class="o">=</span> <span class="n">_button</span><span class="p">(</span><span class="s2">"Выбрать файл"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
+        <span class="n">pick</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">choose_file</span><span class="p">)</span>
+        <span class="n">zl</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_label</span><span class="p">)</span>
+        <span class="n">zl</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">pick</span><span class="p">,</span> <span class="n">alignment</span><span class="o">=</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">zone</span><span class="o">.</span><span class="n">setMinimumHeight</span><span class="p">(</span><span class="mi">110</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Название звука"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">"Новый звук"</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Категория"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="o">=</span> <span class="n">QComboBox</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">setEditable</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">addItems</span><span class="p">(</span><span class="nb">sorted</span><span class="p">({</span><span class="n">DEFAULT_CATEGORY</span><span class="p">,</span> <span class="o">*</span><span class="n">manager</span><span class="o">.</span><span class="n">categories</span><span class="p">()}))</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Горячая клавиша (если пусто — назначится автоматически)"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hotkey</span> <span class="o">=</span> <span class="n">HotkeyEdit</span><span class="p">()</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hotkey</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">_ok_cancel</span><span class="p">(</span><span class="s2">"Добавить"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">))</span>
+
+    <span class="c1"># --- файл -----------------------------------------------------------</span>
+<div class="viewcode-block" id="AddSoundDialog.choose_file">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.choose_file">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">choose_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Открывает диалог выбора аудиофайла."""</span>
+        <span class="n">path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Выберите аудиофайл"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()),</span> <span class="n">AUDIO_FILTER</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AddSoundDialog.set_path">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.set_path">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Заполняет путь к файлу и подставляет название из имени файла."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="o">.</span><span class="n">text</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AddSoundDialog.dragEnterEvent">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.dragEnterEvent">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dragEnterEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">mimeData</span><span class="p">()</span><span class="o">.</span><span class="n">hasUrls</span><span class="p">():</span>
+            <span class="n">event</span><span class="o">.</span><span class="n">acceptProposedAction</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="AddSoundDialog.dropEvent">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.dropEvent">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dropEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">mimeData</span><span class="p">()</span><span class="o">.</span><span class="n">urls</span><span class="p">():</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">toLocalFile</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">AUDIO_EXT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                <span class="k">break</span></div>
+
+
+    <span class="c1"># --- результат --------------------------------------------------------</span>
+<div class="viewcode-block" id="AddSoundDialog.validate">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.validate">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Проверяет введённые данные и закрывает диалог при успехе."""</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Звук"</span><span class="p">,</span> <span class="s2">"Выберите аудиофайл (WAV, OGG или MP3)."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Звук"</span><span class="p">,</span> <span class="s2">"Введите название звука."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">find_by_hotkey</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hotkey</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">other</span><span class="p">:</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Клавиша занята"</span><span class="p">,</span>
+                                <span class="sa">f</span><span class="s2">"Клавиша </span><span class="si">{</span><span class="n">keys</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hotkey</span><span class="o">.</span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2"> уже назначена звуку «</span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">»."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="AddSoundDialog.values">
+<a class="viewcode-back" href="../api.html#dialogs.AddSoundDialog.values">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Возвращает значения полей диалога в виде словаря."""</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name_edit</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="s2">"path"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+                <span class="s2">"hotkey"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hotkey</span><span class="o">.</span><span class="n">key</span><span class="p">,</span>
+                <span class="s2">"category"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">or</span> <span class="n">DEFAULT_CATEGORY</span><span class="p">}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HotkeyDialog">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyDialog">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HotkeyDialog</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Диалог назначения горячей клавиши существующему звуку."""</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manager</span><span class="p">:</span> <span class="n">SoundManager</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">manager</span><span class="p">,</span> <span class="n">sound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Назначение клавиши"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="mi">420</span><span class="p">)</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Назначение клавиши"</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"font-size: 18px;"</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Звук: </span><span class="si">{</span><span class="n">sound</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Текущая клавиша: </span><span class="si">{</span><span class="n">keys</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">hotkey</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'—'</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Нажмите новую клавишу на клавиатуре (Backspace — убрать клавишу)"</span><span class="p">)</span>
+        <span class="n">note</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">note</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edit</span> <span class="o">=</span> <span class="n">HotkeyEdit</span><span class="p">(</span><span class="s2">"Ожидание нажатия…"</span><span class="p">,</span> <span class="n">sound</span><span class="o">.</span><span class="n">hotkey</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="o">.</span><span class="n">setAlignment</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">AlignmentFlag</span><span class="o">.</span><span class="n">AlignCenter</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">_ok_cancel</span><span class="p">(</span><span class="s2">"Сохранить"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="o">.</span><span class="n">setFocus</span><span class="p">()</span>
+
+<div class="viewcode-block" id="HotkeyDialog.validate">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyDialog.validate">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Проверяет, что клавиша не занята другим звуком."""</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">find_by_hotkey</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">exclude_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">other</span><span class="p">:</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Клавиша занята"</span><span class="p">,</span>
+                                <span class="sa">f</span><span class="s2">"Клавиша </span><span class="si">{</span><span class="n">keys</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="o">.</span><span class="n">key</span><span class="p">)</span><span class="si">}</span><span class="s2"> уже назначена звуку «</span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">»."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="HotkeyDialog.key">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeyDialog.key">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">key</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Возвращает выбранную пользователем клавишу."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit</span><span class="o">.</span><span class="n">key</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SettingsDialog">
+<a class="viewcode-back" href="../api.html#dialogs.SettingsDialog">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SettingsDialog</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Диалог настроек воспроизведения и горячих клавиш."""</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">open_hotkeys</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Настройки"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="mi">480</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Настройки"</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"font-size: 18px;"</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Настройка воспроизведения звуков"</span><span class="p">))</span>
+
+        <span class="c1"># звук</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">bl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">(</span><span class="s2">"Звук"</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Общая громкость"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span> <span class="o">=</span> <span class="n">QSlider</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">Orientation</span><span class="o">.</span><span class="n">Horizontal</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">"master_volume"</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">valueChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">%"</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_label</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">value</span><span class="p">()</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_label</span><span class="p">)</span>
+        <span class="n">bl</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+
+        <span class="c1"># поведение</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">bl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">(</span><span class="s2">"Поведение звуков"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overlap</span> <span class="o">=</span> <span class="n">QCheckBox</span><span class="p">(</span><span class="s2">"Разрешить одновременное воспроизведение"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span> <span class="o">=</span> <span class="n">QCheckBox</span><span class="p">(</span><span class="s2">"Зацикливать звуки"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remember</span> <span class="o">=</span> <span class="n">QCheckBox</span><span class="p">(</span><span class="s2">"Запоминать настройки"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_keys</span> <span class="o">=</span> <span class="n">QCheckBox</span><span class="p">(</span><span class="s2">"Горячие клавиши работают, когда окно не в фокусе"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overlap</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">"allow_overlap"</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">"loop_all"</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">remember</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">"remember_settings"</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_keys</span><span class="o">.</span><span class="n">setChecked</span><span class="p">(</span><span class="n">settings</span><span class="p">[</span><span class="s2">"global_hotkeys"</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">cb</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">overlap</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">remember</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_keys</span><span class="p">):</span>
+            <span class="n">bl</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">cb</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+
+        <span class="c1"># горячие клавиши</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">bl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">(</span><span class="s2">"Горячие клавиши"</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Управление клавишами"</span><span class="p">))</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addStretch</span><span class="p">()</span>
+        <span class="n">configure</span> <span class="o">=</span> <span class="n">_button</span><span class="p">(</span><span class="s2">"Настроить"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
+        <span class="n">configure</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">open_hotkeys</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">configure</span><span class="p">)</span>
+        <span class="n">bl</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+
+        <span class="n">root</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">_ok_cancel</span><span class="p">(</span><span class="s2">"Сохранить"</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">))</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_group</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="n">QFrame</span><span class="p">()</span>
+        <span class="n">box</span><span class="o">.</span><span class="n">setObjectName</span><span class="p">(</span><span class="s2">"group"</span><span class="p">)</span>
+        <span class="n">layout</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;b&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">&lt;/b&gt;"</span><span class="p">)</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">box</span><span class="p">,</span> <span class="n">layout</span>
+
+<div class="viewcode-block" id="SettingsDialog.values">
+<a class="viewcode-back" href="../api.html#dialogs.SettingsDialog.values">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Возвращает настройки из полей диалога."""</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"master_volume"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">slider</span><span class="o">.</span><span class="n">value</span><span class="p">(),</span>
+                <span class="s2">"allow_overlap"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">overlap</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span>
+                <span class="s2">"loop_all"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span>
+                <span class="s2">"remember_settings"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">remember</span><span class="o">.</span><span class="n">isChecked</span><span class="p">(),</span>
+                <span class="s2">"global_hotkeys"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_keys</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HotkeysListDialog">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeysListDialog">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HotkeysListDialog</span><span class="p">(</span><span class="n">QDialog</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Управление клавишами: выбрать звук и открыть окно «Назначение клавиши»."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">main_window</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">parent</span> <span class="ow">or</span> <span class="n">main_window</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span> <span class="o">=</span> <span class="n">main_window</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Управление клавишами"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setMinimumWidth</span><span class="p">(</span><span class="mi">440</span><span class="p">)</span>
+
+        <span class="n">root</span> <span class="o">=</span> <span class="n">QVBoxLayout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">"Управление клавишами"</span><span class="p">)</span>
+        <span class="n">title</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="s2">"font-size: 18px;"</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Выберите звук и нажмите «Назначить клавишу»."</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list</span> <span class="o">=</span> <span class="n">QListWidget</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">setMinimumHeight</span><span class="p">(</span><span class="mi">260</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">itemDoubleClicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">assign</span><span class="p">())</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">)</span>
+
+        <span class="n">row</span> <span class="o">=</span> <span class="n">QHBoxLayout</span><span class="p">()</span>
+        <span class="n">assign</span> <span class="o">=</span> <span class="n">_button</span><span class="p">(</span><span class="s2">"Назначить клавишу"</span><span class="p">,</span> <span class="s2">"green"</span><span class="p">)</span>
+        <span class="n">assign</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assign</span><span class="p">)</span>
+        <span class="n">close</span> <span class="o">=</span> <span class="n">_button</span><span class="p">(</span><span class="s2">"Закрыть"</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+        <span class="n">close</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">close</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">addLayout</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+
+<div class="viewcode-block" id="HotkeysListDialog.refresh">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeysListDialog.refresh">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Обновляет список звуков и назначенных им клавиш."""</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">currentRow</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">sound</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">sounds</span><span class="p">:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">QListWidgetItem</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sound</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">      [</span><span class="si">{</span><span class="n">keys</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">hotkey</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'—'</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">ItemDataRole</span><span class="o">.</span><span class="n">UserRole</span><span class="p">,</span> <span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">count</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">setCurrentRow</span><span class="p">(</span><span class="n">row</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HotkeysListDialog.assign">
+<a class="viewcode-back" href="../api.html#dialogs.HotkeysListDialog.assign">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Открывает диалог назначения клавиши для выбранного звука."""</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">currentItem</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">QMessageBox</span><span class="o">.</span><span class="n">information</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">"Клавиши"</span><span class="p">,</span> <span class="s2">"Сначала выберите звук в списке "</span>
+                                    <span class="s2">"(если список пуст — добавьте звук)."</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">change_hotkey</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">ItemDataRole</span><span class="o">.</span><span class="n">UserRole</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2026, Загайнов Н. А.. 
+      <span class="lastupdated">Обновлено: 05.11.2026.
+      </span></p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

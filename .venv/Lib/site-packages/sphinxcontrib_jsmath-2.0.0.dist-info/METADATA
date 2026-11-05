@@ -1,0 +1,71 @@
+Metadata-Version: 2.5
+Name: sphinxcontrib-jsmath
+Version: 2.0.0
+Summary: sphinxcontrib-jsmath is a sphinx extension which renders displayed maths in HTML via JavaScript
+Author-email: Georg Brandl <georg@python.org>
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3.15
+Classifier: Programming Language :: Python :: 3.16
+Classifier: Framework :: Sphinx
+Classifier: Framework :: Sphinx :: Extension
+Classifier: Topic :: Documentation
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Utilities
+License-File: LICENCE.rst
+Requires-Dist: ruff==0.5.5 ; extra == "lint"
+Requires-Dist: mypy ; extra == "lint"
+Requires-Dist: types-docutils ; extra == "lint"
+Requires-Dist: Sphinx>=5 ; extra == "standalone"
+Requires-Dist: pytest ; extra == "test"
+Project-URL: Changelog, https://github.com/sphinx-doc/sphinxcontrib-jsmath/blob/master/CHANGES.rst
+Project-URL: Code, https://github.com/sphinx-doc/sphinxcontrib-jsmath/
+Project-URL: Download, https://pypi.org/project/sphinxcontrib-jsmath/
+Project-URL: Homepage, https://www.sphinx-doc.org/
+Project-URL: Issue tracker, https://github.com/sphinx-doc/sphinx/issues/
+Provides-Extra: lint
+Provides-Extra: standalone
+Provides-Extra: test
+Import-Name: sphinxcontrib.jsmath
+Import-Namespace: sphinxcontrib
+
+===============================
+README for sphinxcontrib-jsmath
+===============================
+
+sphinxcontrib-jsmath is a sphinx extension which renders display math in HTML
+via JavaScript.
+
+For more details, please visit http://www.sphinx-doc.org/.
+
+Installing
+==========
+
+Install from PyPI::
+
+   pip install -U sphinxcontrib-jsmath
+
+Contributing
+============
+
+See `CONTRIBUTING.rst`__
+
+.. __: https://github.com/sphinx-doc/sphinx/blob/master/CONTRIBUTING.rst
+

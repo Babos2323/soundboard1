@@ -1,0 +1,719 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>audio_engine &mdash; Soundboard — документация</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=aa56e9b3" />
+
+  
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=ab5a9b04"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=cd1d70c9"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="../genindex.html" />
+    <link rel="search" title="Поиск" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Soundboard
+              <img src="../_static/icon.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Документация</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Архитектура приложения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id2">Общая схема</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id3">Взаимодействие слоёв</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id4">Используемые паттерны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id5">Структура модулей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id6">Модель данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id7">Диаграмма классов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id8">Поток данных при запуске звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#id9">Хранение и восстановление</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../functionality.html">Функциональность</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id2">Главный экран</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id3">Воспроизведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id4">Перемотка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id5">Зацикливание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id6">Громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id7">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id8">Поиск и категории</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functionality.html#id10">Форматы и ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual.html">Руководство пользователя</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id2">Назначение программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id3">Условия выполнения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id4">Запуск программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id5">Добавление звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id6">Запуск и остановка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id7">Перемотка, зацикливание и громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id8">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id10">Настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id11">Сохранение данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id12">Сообщения и действия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id13">Частые проблемы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_manual.html#id14">Завершение работы</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual.html">Руководство разработчика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id2">Стек технологий</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id3">Структура проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#windows">Настройка окружения (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id4">Сборка Windows-приложения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id5">Тесты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#sphinx">Документация Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id6">Требования к коду</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id7">Архитектурные правила</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id8">Как добавить новую функцию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id9">Релизный чек-лист</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id10">Передача знаний новому разработчику</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer_manual.html#id11">Известные ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Примеры использования</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id2">Пользовательские сценарии</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id3">Работа с моделью из кода</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#id4">Настройки приложения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API-справочник</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-models">Модель данных</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#models.Sound"><code class="docutils literal notranslate"><span class="pre">Sound</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.name"><code class="docutils literal notranslate"><span class="pre">Sound.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.path"><code class="docutils literal notranslate"><span class="pre">Sound.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.hotkey"><code class="docutils literal notranslate"><span class="pre">Sound.hotkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.volume"><code class="docutils literal notranslate"><span class="pre">Sound.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.is_loop"><code class="docutils literal notranslate"><span class="pre">Sound.is_loop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.category"><code class="docutils literal notranslate"><span class="pre">Sound.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.id"><code class="docutils literal notranslate"><span class="pre">Sound.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.to_dict"><code class="docutils literal notranslate"><span class="pre">Sound.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#models.Sound.from_dict"><code class="docutils literal notranslate"><span class="pre">Sound.from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-config_repository">Хранение конфигурации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#config_repository.default_config_path"><code class="docutils literal notranslate"><span class="pre">default_config_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#config_repository.ConfigRepository"><code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.instance"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.load"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#config_repository.ConfigRepository.save"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-sound_manager">Библиотека звуков</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#sound_manager.SoundManager"><code class="docutils literal notranslate"><span class="pre">SoundManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.get"><code class="docutils literal notranslate"><span class="pre">SoundManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.find_by_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.find_by_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.categories"><code class="docutils literal notranslate"><span class="pre">SoundManager.categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.next_free_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.next_free_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.add"><code class="docutils literal notranslate"><span class="pre">SoundManager.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.remove"><code class="docutils literal notranslate"><span class="pre">SoundManager.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.update"><code class="docutils literal notranslate"><span class="pre">SoundManager.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.set_settings"><code class="docutils literal notranslate"><span class="pre">SoundManager.set_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#sound_manager.SoundManager.save"><code class="docutils literal notranslate"><span class="pre">SoundManager.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-audio_engine">Аудиодвижок</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#audio_engine.AudioEngine"><code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.instance"><code class="docutils literal notranslate"><span class="pre">AudioEngine.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.play"><code class="docutils literal notranslate"><span class="pre">AudioEngine.play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.stop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.stop_all"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.is_playing"><code class="docutils literal notranslate"><span class="pre">AudioEngine.is_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.position"><code class="docutils literal notranslate"><span class="pre">AudioEngine.position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.load_duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.load_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.seek"><code class="docutils literal notranslate"><span class="pre">AudioEngine.seek()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_loop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_master_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.set_sound_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.invalidate"><code class="docutils literal notranslate"><span class="pre">AudioEngine.invalidate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#audio_engine.AudioEngine.shutdown"><code class="docutils literal notranslate"><span class="pre">AudioEngine.shutdown()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-keys">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.from_qt_event"><code class="docutils literal notranslate"><span class="pre">from_qt_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.from_pynput"><code class="docutils literal notranslate"><span class="pre">from_pynput()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#keys.pretty"><code class="docutils literal notranslate"><span class="pre">pretty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager"><code class="docutils literal notranslate"><span class="pre">HotkeyManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.active"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.start"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#hotkey_manager.HotkeyManager.stop"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-main_window">Интерфейс и диалоги</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.NoWheelSlider"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.NoWheelSlider.wheelEvent"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SeekSlider"><code class="docutils literal notranslate"><span class="pre">SeekSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseMoveEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SeekSlider.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseReleaseEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.ElidedLabel"><code class="docutils literal notranslate"><span class="pre">ElidedLabel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.ElidedLabel.set_full_text"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.set_full_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.ElidedLabel.resizeEvent"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.resizeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.CardScrollArea"><code class="docutils literal notranslate"><span class="pre">CardScrollArea</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CardScrollArea.PIXELS_PER_NOTCH"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.PIXELS_PER_NOTCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CardScrollArea.wheelEvent"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.CategoryButton"><code class="docutils literal notranslate"><span class="pre">CategoryButton</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CategoryButton.currentText"><code class="docutils literal notranslate"><span class="pre">CategoryButton.currentText()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.CategoryButton.set_items"><code class="docutils literal notranslate"><span class="pre">CategoryButton.set_items()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.Logo"><code class="docutils literal notranslate"><span class="pre">Logo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.Logo.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">Logo.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.Logo.paintEvent"><code class="docutils literal notranslate"><span class="pre">Logo.paintEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SoundCard"><code class="docutils literal notranslate"><span class="pre">SoundCard</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SoundCard.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_playing"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.set_volume"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundCard.update_from_sound"><code class="docutils literal notranslate"><span class="pre">SoundCard.update_from_sound()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.SoundsPage"><code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.cards"><code class="docutils literal notranslate"><span class="pre">SoundsPage.cards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.now_rows"><code class="docutils literal notranslate"><span class="pre">SoundsPage.now_rows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.resizeEvent"><code class="docutils literal notranslate"><span class="pre">SoundsPage.resizeEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_categories"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.populate"><code class="docutils literal notranslate"><span class="pre">SoundsPage.populate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.render"><code class="docutils literal notranslate"><span class="pre">SoundsPage.render()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.sync_sound"><code class="docutils literal notranslate"><span class="pre">SoundsPage.sync_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.set_master_volume"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.mark_started"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.SoundsPage.mark_finished"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_finished()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main_window.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_main"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_library"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_library()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.refresh"><code class="docutils literal notranslate"><span class="pre">MainWindow.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.toggle"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_card_clicked"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_card_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_started"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_finished"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_finished()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_progress"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.seek_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.seek_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.set_sound_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.set_sound_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.preview_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.commit_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.preview_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.commit_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.handle_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.handle_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.keyPressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.on_global_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_global_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.add_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.change_hotkey"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.rename_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.rename_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.change_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.toggle_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.remove_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.show_context_menu"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_context_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.open_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.apply_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#main_window.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit.set_key"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.set_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyEdit.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.keyPressEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.choose_file"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.choose_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.set_path"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.set_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.dragEnterEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dragEnterEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.dropEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dropEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.validate"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.AddSoundDialog.values"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog.validate"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeyDialog.key"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.key()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.SettingsDialog"><code class="docutils literal notranslate"><span class="pre">SettingsDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.SettingsDialog.values"><code class="docutils literal notranslate"><span class="pre">SettingsDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog.refresh"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api.html#dialogs.HotkeysListDialog.assign"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.assign()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-theme">Тема оформления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-main">Точка входа</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main.resource_path"><code class="docutils literal notranslate"><span class="pre">resource_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api.html#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Поддержка и развитие проекта</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id2">Процесс поддержки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id3">Бэклог продукта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id4">Отслеживание ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id5">Известные ограничения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id6">Обратная связь</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../support.html#id7">Политика версий</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">История версий</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id2">1.3 — документация и поддержка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id3">1.2 — интерфейс и кроссплатформенность</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#mvp">1.1 — MVP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelog.html#id4">1.0 — прототип</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Soundboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Код модуля</a></li>
+      <li class="breadcrumb-item active">audio_engine</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Исходный код audio_engine</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""AudioEngine (Singleton): воспроизведение через pygame.mixer.</span>
+
+<span class="sd">Сигналы (Observer) сообщают интерфейсу о начале, конце и текущей позиции звука.</span>
+<span class="sd">Маленький буфер (512 сэмплов ≈ 12 мс) обеспечивает задержку заметно меньше 100 мс.</span>
+
+<span class="sd">Перемотка реализована без внешних зависимостей: у `pygame.mixer.Sound` нет</span>
+<span class="sd">позиции, поэтому нужный фрагмент вырезается из сырых PCM-данных (`Sound.get_raw`)</span>
+<span class="sd">и проигрывается как отдельный Sound с начала фрагмента.</span>
+<span class="sd">"""</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">"PYGAME_HIDE_SUPPORT_PROMPT"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PyQt6.QtCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Qt</span><span class="p">,</span> <span class="n">QObject</span><span class="p">,</span> <span class="n">QTimer</span><span class="p">,</span> <span class="n">pyqtSignal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sound</span>
+
+<span class="n">CHANNELS</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">PROGRESS_MS</span> <span class="o">=</span> <span class="mi">100</span>          <span class="c1"># как часто обновлять позицию в интерфейсе</span>
+
+
+<div class="viewcode-block" id="AudioEngine">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine">[документация]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AudioEngine</span><span class="p">(</span><span class="n">QObject</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Движок воспроизведения на pygame.mixer (Singleton).</span>
+
+<span class="sd">    Управляет каналами, громкостью, перемоткой и зацикливанием, сообщает</span>
+<span class="sd">    интерфейсу о событиях через сигналы Qt."""</span>
+    <span class="n">started</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>                   <span class="c1"># sound_id — звук пошёл</span>
+    <span class="n">finished</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>                  <span class="c1"># sound_id — звук закончился/остановлен</span>
+    <span class="n">progress</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>    <span class="c1"># sound_id, позиция (с), длительность (с)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">pyqtSignal</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>                     <span class="c1"># текст ошибки</span>
+
+    <span class="n">_instance</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="AudioEngine.instance">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.instance">[документация]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">instance</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"AudioEngine"</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Возвращает единственный экземпляр движка."""</span>
+        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_instance</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">pre_init</span><span class="p">(</span><span class="mi">44100</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">set_num_channels</span><span class="p">(</span><span class="n">CHANNELS</span><span class="p">)</span>
+
+        <span class="n">freq</span><span class="p">,</span> <span class="n">_fmt</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">get_init</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">44100</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_freq</span> <span class="o">=</span> <span class="n">freq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_bytes_per_frame</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">if</span> <span class="n">channels</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">2</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">master_volume</span> <span class="o">=</span> <span class="mf">0.7</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">allow_overlap</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Channel</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sounds</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sound</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_starts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># id -&gt; (смещение, monotonic)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_looped</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>                  <span class="c1"># цикл включён у канала</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_override</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>           <span class="c1"># ручное переключение цикла</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>                <span class="c1"># позиция до первого play</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>                 <span class="c1"># защита от устаревших таймеров</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ticks</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span> <span class="o">=</span> <span class="n">QTimer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">setInterval</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">timeout</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># --- управление ------------------------------------------------------</span>
+<div class="viewcode-block" id="AudioEngine.play">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.play">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">play</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Запускает звук с учётом настроек наложения и позиции.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">        sound: Звук из библиотеки.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        ``True``, если воспроизведение началось."""</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Не удалось загрузить «</span><span class="si">{</span><span class="n">sound</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">»: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">allow_overlap</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">sound</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stop_channel</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">emit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">volume</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_begin</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sound</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">emit_started</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Запустить звук с позиции `start` (секунды)."""</span>
+        <span class="n">snd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">duration</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">-</span> <span class="n">start</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>              <span class="c1"># почти конец — начинаем сначала</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">playable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_slice</span><span class="p">(</span><span class="n">snd</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span> <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="mf">0.001</span> <span class="k">else</span> <span class="n">snd</span>
+        <span class="c1"># Бесшовный цикл возможен только с начала трека; после перемотки сначала</span>
+        <span class="c1"># доигрываем до конца, а на следующем проходе включаем цикл с начала.</span>
+        <span class="n">loops</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;=</span> <span class="mf">0.001</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_loop</span><span class="p">(</span><span class="n">sound</span><span class="p">))</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="n">playable</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">loops</span><span class="o">=</span><span class="n">loops</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">channel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s2">"Нет свободных аудиоканалов"</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">sound</span><span class="o">.</span><span class="n">volume</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_volume</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">channel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sounds</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">sound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_starts</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_looped</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">loops</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">emit_started</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">started</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+
+<div class="viewcode-block" id="AudioEngine.stop">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.stop">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Останавливает звук по идентификатору."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_channel</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="n">emit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.stop_all">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.stop_all">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Останавливает все воспроизводимые звуки."""</span>
+        <span class="k">for</span> <span class="n">sound_id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.is_playing">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.is_playing">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_playing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Проверяет, воспроизводится ли звук сейчас."""</span>
+        <span class="k">return</span> <span class="n">sound_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_stop_channel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">emit</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_starts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_looped</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sounds</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">channel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">channel</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">emit</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">finished</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+
+    <span class="c1"># --- перемотка -------------------------------------------------------</span>
+<div class="viewcode-block" id="AudioEngine.position">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.position">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Текущая позиция звука в секундах."""</span>
+        <span class="k">if</span> <span class="n">sound_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="n">offset</span><span class="p">,</span> <span class="n">started_at</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_starts</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span>
+        <span class="n">elapsed</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">started_at</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_looped</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span> <span class="ow">and</span> <span class="n">duration</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">:</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">duration</span> <span class="o">-</span> <span class="n">offset</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">elapsed</span> <span class="o">%</span> <span class="n">span</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">elapsed</span>
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span> <span class="k">if</span> <span class="n">duration</span> <span class="k">else</span> <span class="n">position</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.duration">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.duration">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Возвращает известную длительность звука в секундах."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.load_duration">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.load_duration">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Длительность звука (при необходимости загружает файл). 0 при ошибке."""</span>
+        <span class="k">if</span> <span class="n">sound</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mf">0.0</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.seek">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.seek">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">seek</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">,</span> <span class="n">fraction</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Перемотать звук на долю `fraction` (0..1) его длительности."""</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_duration</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">fraction</span> <span class="o">*</span> <span class="n">duration</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">-</span> <span class="n">seconds</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>           <span class="c1"># перемотка в самый конец — останавливаемся</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">sound</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stop_channel</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">emit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_begin</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">emit_started</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">seconds</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">seconds</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span></div>
+
+
+    <span class="c1"># --- зацикливание ----------------------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_effective_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop_all</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_override</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">sound</span><span class="o">.</span><span class="n">is_loop</span><span class="p">))</span>
+
+<div class="viewcode-block" id="AudioEngine.set_loop">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.set_loop">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">loop</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Включить/выключить цикл без перезапуска и без «прыжка» позиции."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_override</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">loop</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">sound_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">loop</span><span class="p">:</span>
+            <span class="c1"># Не трогаем текущий канал: звук доиграет и на следующем проходе</span>
+            <span class="c1"># зациклится с начала трека (обычно мгновенно для коротких звуков).</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_looped</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">):</span>
+            <span class="c1"># Сейчас играет бесшовный цикл — даём доиграть текущий проход</span>
+            <span class="c1"># и останавливаемся в его конце, не перезапуская звук.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_schedule_stop_after_cycle</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_schedule_stop_after_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">remaining</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">duration</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">sound_id</span><span class="p">))</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">QTimer</span><span class="o">.</span><span class="n">singleShot</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">remaining</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">Qt</span><span class="o">.</span><span class="n">TimerType</span><span class="o">.</span><span class="n">PreciseTimer</span><span class="p">,</span>
+                          <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_after_cycle</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="n">gen</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_stop_after_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">gen</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span> <span class="o">!=</span> <span class="n">gen</span><span class="p">:</span>
+            <span class="k">return</span>                          <span class="c1"># звук уже перезапустили/остановили</span>
+        <span class="k">if</span> <span class="n">sound_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+
+    <span class="c1"># --- громкость -------------------------------------------------------</span>
+<div class="viewcode-block" id="AudioEngine.set_master_volume">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.set_master_volume">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_master_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">percent</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Устанавливает общую громкость в процентах (0–100)."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">master_volume</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">percent</span> <span class="o">/</span> <span class="mi">100</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">sound_id</span><span class="p">,</span> <span class="n">channel</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_volume</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.set_sound_volume">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.set_sound_volume">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_sound_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">volume</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Устанавливает громкость отдельного звука (0.0–1.0)."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">volume</span><span class="p">))</span>
+        <span class="n">channel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">channel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="p">[</span><span class="n">sound_id</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">master_volume</span><span class="p">)</span></div>
+
+
+    <span class="c1"># --- служебное -------------------------------------------------------</span>
+<div class="viewcode-block" id="AudioEngine.invalidate">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.invalidate">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">invalidate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Сбрасывает кэш звука (например, перед удалением)."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_volumes</span><span class="p">,</span>
+                      <span class="bp">self</span><span class="o">.</span><span class="n">_loop_override</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pending</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop_gen</span><span class="p">):</span>
+            <span class="n">store</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AudioEngine.shutdown">
+<a class="viewcode-back" href="../api.html#audio_engine.AudioEngine.shutdown">[документация]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Останавливает все каналы и освобождает аудиосистему."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sound</span><span class="p">:</span> <span class="n">Sound</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"pygame.mixer.Sound"</span><span class="p">:</span>
+        <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cached</span> <span class="ow">and</span> <span class="n">cached</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sound</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">cached</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">snd</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">sound</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">snd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="p">[</span><span class="n">sound</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">snd</span><span class="o">.</span><span class="n">get_length</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">snd</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snd</span><span class="p">:</span> <span class="s2">"pygame.mixer.Sound"</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"pygame.mixer.Sound"</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Sound, начинающийся со смещения `start` секунд."""</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">snd</span><span class="o">.</span><span class="n">get_raw</span><span class="p">()</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_freq</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bytes_per_frame</span>
+        <span class="n">offset</span> <span class="o">-=</span> <span class="n">offset</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_bytes_per_frame</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">offset</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="n">buffer</span><span class="o">=</span><span class="n">raw</span><span class="p">[</span><span class="n">offset</span><span class="p">:])</span>
+
+    <span class="c1"># --- таймер ----------------------------------------------------------</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_poll</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">sound_id</span><span class="p">,</span> <span class="n">channel</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="n">channel</span><span class="o">.</span><span class="n">get_busy</span><span class="p">():</span>
+                <span class="k">continue</span>
+            <span class="c1"># Канал освободился: проход закончился.</span>
+            <span class="n">sound</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sounds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">sound</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_loop</span><span class="p">(</span><span class="n">sound</span><span class="p">):</span>
+                <span class="c1"># Цикл включён (в т.ч. во время воспроизведения): начинаем</span>
+                <span class="c1"># следующий проход с начала трека. Дальше он уже бесшовный.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_stop_channel</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="n">emit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_begin</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">emit_started</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stop_channel</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="n">emit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ticks</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ticks</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_timer</span><span class="o">.</span><span class="n">interval</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">PROGRESS_MS</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ticks</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">sound_id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_channels</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">(</span><span class="n">sound_id</span><span class="p">),</span>
+                                   <span class="bp">self</span><span class="o">.</span><span class="n">_durations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">sound_id</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2026, Загайнов Н. А.. 
+      <span class="lastupdated">Обновлено: 05.11.2026.
+      </span></p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

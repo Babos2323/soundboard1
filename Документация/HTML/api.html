@@ -1,0 +1,1868 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ru" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API-справочник &mdash; Soundboard — документация</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=aa56e9b3" />
+
+  
+    <link rel="shortcut icon" href="_static/icon.png"/>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=ab5a9b04"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/translations.js?v=cd1d70c9"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="next" title="Поддержка и развитие проекта" href="support.html" />
+    <link rel="prev" title="Примеры использования" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Soundboard
+              <img src="_static/icon.png" class="logo" alt="Логотип"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Поиск в документации" aria-label="Поиск в документации" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Меню навигации">
+              <p class="caption" role="heading"><span class="caption-text">Документация</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Архитектура приложения</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id2">Общая схема</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id3">Взаимодействие слоёв</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id4">Используемые паттерны</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id5">Структура модулей</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id6">Модель данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id7">Диаграмма классов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id8">Поток данных при запуске звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#id9">Хранение и восстановление</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functionality.html">Функциональность</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id2">Главный экран</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id3">Воспроизведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id4">Перемотка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id5">Зацикливание</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id6">Громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id7">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id8">Поиск и категории</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functionality.html#id10">Форматы и ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual.html">Руководство пользователя</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id2">Назначение программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id3">Условия выполнения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id4">Запуск программы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id5">Добавление звука</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id6">Запуск и остановка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id7">Перемотка, зацикливание и громкость</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id8">Библиотека</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id9">Горячие клавиши</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id10">Настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id11">Сохранение данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id12">Сообщения и действия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id13">Частые проблемы</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_manual.html#id14">Завершение работы</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer_manual.html">Руководство разработчика</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id2">Стек технологий</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id3">Структура проекта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#windows">Настройка окружения (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id4">Сборка Windows-приложения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id5">Тесты</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#sphinx">Документация Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id6">Требования к коду</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id7">Архитектурные правила</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id8">Как добавить новую функцию</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id9">Релизный чек-лист</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id10">Передача знаний новому разработчику</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_manual.html#id11">Известные ограничения</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Примеры использования</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id2">Пользовательские сценарии</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id3">Работа с моделью из кода</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id4">Настройки приложения</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API-справочник</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-models">Модель данных</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#models.Sound"><code class="docutils literal notranslate"><span class="pre">Sound</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.name"><code class="docutils literal notranslate"><span class="pre">Sound.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.path"><code class="docutils literal notranslate"><span class="pre">Sound.path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.hotkey"><code class="docutils literal notranslate"><span class="pre">Sound.hotkey</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.volume"><code class="docutils literal notranslate"><span class="pre">Sound.volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.is_loop"><code class="docutils literal notranslate"><span class="pre">Sound.is_loop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.category"><code class="docutils literal notranslate"><span class="pre">Sound.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.id"><code class="docutils literal notranslate"><span class="pre">Sound.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.to_dict"><code class="docutils literal notranslate"><span class="pre">Sound.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models.Sound.from_dict"><code class="docutils literal notranslate"><span class="pre">Sound.from_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-config_repository">Хранение конфигурации</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#config_repository.default_config_path"><code class="docutils literal notranslate"><span class="pre">default_config_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#config_repository.ConfigRepository"><code class="docutils literal notranslate"><span class="pre">ConfigRepository</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#config_repository.ConfigRepository.instance"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config_repository.ConfigRepository.load"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config_repository.ConfigRepository.save"><code class="docutils literal notranslate"><span class="pre">ConfigRepository.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sound_manager">Библиотека звуков</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sound_manager.SoundManager"><code class="docutils literal notranslate"><span class="pre">SoundManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.get"><code class="docutils literal notranslate"><span class="pre">SoundManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.find_by_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.find_by_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.categories"><code class="docutils literal notranslate"><span class="pre">SoundManager.categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.next_free_hotkey"><code class="docutils literal notranslate"><span class="pre">SoundManager.next_free_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.add"><code class="docutils literal notranslate"><span class="pre">SoundManager.add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.remove"><code class="docutils literal notranslate"><span class="pre">SoundManager.remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.update"><code class="docutils literal notranslate"><span class="pre">SoundManager.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.set_settings"><code class="docutils literal notranslate"><span class="pre">SoundManager.set_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sound_manager.SoundManager.save"><code class="docutils literal notranslate"><span class="pre">SoundManager.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-audio_engine">Аудиодвижок</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#audio_engine.AudioEngine"><code class="docutils literal notranslate"><span class="pre">AudioEngine</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.instance"><code class="docutils literal notranslate"><span class="pre">AudioEngine.instance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.play"><code class="docutils literal notranslate"><span class="pre">AudioEngine.play()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.stop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.stop_all"><code class="docutils literal notranslate"><span class="pre">AudioEngine.stop_all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.is_playing"><code class="docutils literal notranslate"><span class="pre">AudioEngine.is_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.position"><code class="docutils literal notranslate"><span class="pre">AudioEngine.position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.load_duration"><code class="docutils literal notranslate"><span class="pre">AudioEngine.load_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.seek"><code class="docutils literal notranslate"><span class="pre">AudioEngine.seek()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.set_loop"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.set_master_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.set_sound_volume"><code class="docutils literal notranslate"><span class="pre">AudioEngine.set_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.invalidate"><code class="docutils literal notranslate"><span class="pre">AudioEngine.invalidate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audio_engine.AudioEngine.shutdown"><code class="docutils literal notranslate"><span class="pre">AudioEngine.shutdown()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-keys">Горячие клавиши</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#keys.from_qt_event"><code class="docutils literal notranslate"><span class="pre">from_qt_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keys.from_pynput"><code class="docutils literal notranslate"><span class="pre">from_pynput()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keys.pretty"><code class="docutils literal notranslate"><span class="pre">pretty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hotkey_manager.HotkeyManager"><code class="docutils literal notranslate"><span class="pre">HotkeyManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hotkey_manager.HotkeyManager.active"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hotkey_manager.HotkeyManager.start"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hotkey_manager.HotkeyManager.stop"><code class="docutils literal notranslate"><span class="pre">HotkeyManager.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main_window">Интерфейс и диалоги</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.format_time"><code class="docutils literal notranslate"><span class="pre">format_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.NoWheelSlider"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.NoWheelSlider.wheelEvent"><code class="docutils literal notranslate"><span class="pre">NoWheelSlider.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.SeekSlider"><code class="docutils literal notranslate"><span class="pre">SeekSlider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SeekSlider.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SeekSlider.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseMoveEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SeekSlider.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">SeekSlider.mouseReleaseEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.ElidedLabel"><code class="docutils literal notranslate"><span class="pre">ElidedLabel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.ElidedLabel.set_full_text"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.set_full_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.ElidedLabel.resizeEvent"><code class="docutils literal notranslate"><span class="pre">ElidedLabel.resizeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.CardScrollArea"><code class="docutils literal notranslate"><span class="pre">CardScrollArea</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.CardScrollArea.PIXELS_PER_NOTCH"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.PIXELS_PER_NOTCH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.CardScrollArea.wheelEvent"><code class="docutils literal notranslate"><span class="pre">CardScrollArea.wheelEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.CategoryButton"><code class="docutils literal notranslate"><span class="pre">CategoryButton</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.CategoryButton.currentText"><code class="docutils literal notranslate"><span class="pre">CategoryButton.currentText()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.CategoryButton.set_items"><code class="docutils literal notranslate"><span class="pre">CategoryButton.set_items()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.Logo"><code class="docutils literal notranslate"><span class="pre">Logo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.Logo.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">Logo.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.Logo.paintEvent"><code class="docutils literal notranslate"><span class="pre">Logo.paintEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.SoundCard"><code class="docutils literal notranslate"><span class="pre">SoundCard</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">SoundCard.mousePressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.set_playing"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_playing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.set_volume"><code class="docutils literal notranslate"><span class="pre">SoundCard.set_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundCard.update_from_sound"><code class="docutils literal notranslate"><span class="pre">SoundCard.update_from_sound()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.SoundsPage"><code class="docutils literal notranslate"><span class="pre">SoundsPage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.cards"><code class="docutils literal notranslate"><span class="pre">SoundsPage.cards</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.now_rows"><code class="docutils literal notranslate"><span class="pre">SoundsPage.now_rows</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.resizeEvent"><code class="docutils literal notranslate"><span class="pre">SoundsPage.resizeEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.set_categories"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_categories()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.populate"><code class="docutils literal notranslate"><span class="pre">SoundsPage.populate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.render"><code class="docutils literal notranslate"><span class="pre">SoundsPage.render()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.set_duration"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_duration()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.set_progress"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.sync_sound"><code class="docutils literal notranslate"><span class="pre">SoundsPage.sync_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.set_master_volume"><code class="docutils literal notranslate"><span class="pre">SoundsPage.set_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.mark_started"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.SoundsPage.mark_finished"><code class="docutils literal notranslate"><span class="pre">SoundsPage.mark_finished()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#main_window.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.show_main"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.show_library"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_library()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.refresh"><code class="docutils literal notranslate"><span class="pre">MainWindow.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.toggle"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.on_card_clicked"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_card_clicked()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.on_started"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_started()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.on_finished"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_finished()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.on_progress"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_progress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.seek_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.seek_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.set_sound_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.set_sound_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.preview_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.commit_sound_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_sound_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.preview_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.preview_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.commit_master_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.commit_master_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.handle_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.handle_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.keyPressEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.on_global_key"><code class="docutils literal notranslate"><span class="pre">MainWindow.on_global_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.add_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.change_hotkey"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_hotkey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.rename_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.rename_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.change_volume"><code class="docutils literal notranslate"><span class="pre">MainWindow.change_volume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.toggle_loop"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggle_loop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.remove_sound"><code class="docutils literal notranslate"><span class="pre">MainWindow.remove_sound()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.show_context_menu"><code class="docutils literal notranslate"><span class="pre">MainWindow.show_context_menu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.open_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.open_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.apply_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#main_window.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs.HotkeyEdit"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeyEdit.set_key"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.set_key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeyEdit.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">HotkeyEdit.keyPressEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs.AddSoundDialog"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.choose_file"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.choose_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.set_path"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.set_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.dragEnterEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dragEnterEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.dropEvent"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.dropEvent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.validate"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.AddSoundDialog.values"><code class="docutils literal notranslate"><span class="pre">AddSoundDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs.HotkeyDialog"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeyDialog.validate"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.validate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeyDialog.key"><code class="docutils literal notranslate"><span class="pre">HotkeyDialog.key()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs.SettingsDialog"><code class="docutils literal notranslate"><span class="pre">SettingsDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.SettingsDialog.values"><code class="docutils literal notranslate"><span class="pre">SettingsDialog.values()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs.HotkeysListDialog"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeysListDialog.refresh"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.refresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dialogs.HotkeysListDialog.assign"><code class="docutils literal notranslate"><span class="pre">HotkeysListDialog.assign()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-theme">Тема оформления</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-main">Точка входа</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#main.resource_path"><code class="docutils literal notranslate"><span class="pre">resource_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Поддержка и развитие проекта</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id2">Процесс поддержки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id3">Бэклог продукта</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id4">Отслеживание ошибок</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id5">Известные ограничения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id6">Обратная связь</a></li>
+<li class="toctree-l2"><a class="reference internal" href="support.html#id7">Политика версий</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">История версий</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">1.3 — документация и поддержка</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">1.2 — интерфейс и кроссплатформенность</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#mvp">1.1 — MVP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">1.0 — прототип</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Меню навигации для мобильных устройств" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Soundboard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Навигация по страницам">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API-справочник</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> Просмотреть исходный код страницы</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API-справочник<a class="headerlink" href="#api" title="Ссылка на этот заголовок"></a></h1>
+<p>Раздел сгенерирован автоматически из docstrings исходного кода
+(<code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> + <code class="docutils literal notranslate"><span class="pre">sphinx.ext.napoleon</span></code>). Описание классов
+и публичных методов доступно ниже; исходный код можно открыть по ссылке
+«[source]» рядом с каждым объектом.</p>
+<div class="admonition note">
+<p class="admonition-title">Примечание</p>
+<p>Модули импортируются напрямую из папки приложения. При встраивании
+проекта в пакет достаточно изменить путь в <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
+</div>
+<section id="module-models">
+<span id="id1"></span><h2>Модель данных<a class="headerlink" href="#module-models" title="Ссылка на этот заголовок"></a></h2>
+<p>Модель данных: один звук в библиотеке.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="models.Sound">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">models.</span></span><span class="sig-name descname"><span class="pre">Sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hotkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_loop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Без</span> <span class="pre">категории'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models.html#Sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#models.Sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Модель звука в библиотеке.</p>
+<p>Attributes:
+name: Отображаемое название.
+path: Путь к аудиофайлу.
+hotkey: Назначенная клавиша в нижнем регистре.
+volume: Громкость звука (0.0–1.0).
+is_loop: Зацикливать ли звук.
+category: Категория для фильтра.
+id: Уникальный идентификатор (8 hex-символов).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>path</strong> (<em>str</em>)</p></li>
+<li><p><strong>hotkey</strong> (<em>str</em>)</p></li>
+<li><p><strong>volume</strong> (<em>float</em>)</p></li>
+<li><p><strong>is_loop</strong> (<em>bool</em>)</p></li>
+<li><p><strong>category</strong> (<em>str</em>)</p></li>
+<li><p><strong>id</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#models.Sound.name" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.path">
+<span class="sig-name descname"><span class="pre">path</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#models.Sound.path" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.hotkey">
+<span class="sig-name descname"><span class="pre">hotkey</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#models.Sound.hotkey" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></span><a class="headerlink" href="#models.Sound.volume" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.is_loop">
+<span class="sig-name descname"><span class="pre">is_loop</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></span><a class="headerlink" href="#models.Sound.is_loop" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.category">
+<span class="sig-name descname"><span class="pre">category</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Без</span> <span class="pre">категории'</span></span><a class="headerlink" href="#models.Sound.category" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="models.Sound.id">
+<span class="sig-name descname"><span class="pre">id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#models.Sound.id" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="models.Sound.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/models.html#Sound.to_dict"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#models.Sound.to_dict" title="Ссылка на это определение"></a></dt>
+<dd><p>Преобразует звук в словарь для сохранения в JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="models.Sound.from_dict">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/models.html#Sound.from_dict"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#models.Sound.from_dict" title="Ссылка на это определение"></a></dt>
+<dd><p>Создаёт звук из словаря, игнорируя неизвестные поля.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-config_repository">
+<span id="id2"></span><h2>Хранение конфигурации<a class="headerlink" href="#module-config_repository" title="Ссылка на этот заголовок"></a></h2>
+<p>ConfigRepository (Singleton): хранение библиотеки и настроек в JSON.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="config_repository.default_config_path">
+<span class="sig-prename descclassname"><span class="pre">config_repository.</span></span><span class="sig-name descname"><span class="pre">default_config_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/config_repository.html#default_config_path"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#config_repository.default_config_path" title="Ссылка на это определение"></a></dt>
+<dd><p>Путь к файлу конфигурации в профиле Windows (<code class="docutils literal notranslate"><span class="pre">%APPDATA%</span></code>).</p>
+<p>Если переменная <code class="docutils literal notranslate"><span class="pre">APPDATA</span></code> недоступна, используется
+<code class="docutils literal notranslate"><span class="pre">C:\Users\&lt;пользователь&gt;\AppData\Roaming\Soundboard\config.json</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Path</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="config_repository.ConfigRepository">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">config_repository.</span></span><span class="sig-name descname"><span class="pre">ConfigRepository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/config_repository.html#ConfigRepository"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#config_repository.ConfigRepository" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Хранилище библиотеки и настроек в JSON (Singleton).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>Path</em><em> | </em><em>None</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="config_repository.ConfigRepository.instance">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/config_repository.html#ConfigRepository.instance"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#config_repository.ConfigRepository.instance" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает единственный экземпляр хранилища.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#config_repository.ConfigRepository" title="config_repository.ConfigRepository"><em>ConfigRepository</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config_repository.ConfigRepository.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/config_repository.html#ConfigRepository.load"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#config_repository.ConfigRepository.load" title="Ссылка на это определение"></a></dt>
+<dd><p>Загружает список звуков и настройки из файла.</p>
+<p>Если новый файл ещё не создан, но существует конфигурация старой
+версии, данные читаются из неё; при первом сохранении они будут
+записаны по новому пути в <code class="docutils literal notranslate"><span class="pre">%APPDATA%</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Результат<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Кортеж <code class="docutils literal notranslate"><span class="pre">(sounds,</span> <span class="pre">settings)</span></code>; при ошибках возвращает значения
+по умолчанию.</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[list[<a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a>], dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="config_repository.ConfigRepository.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/config_repository.html#ConfigRepository.save"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#config_repository.ConfigRepository.save" title="Ссылка на это определение"></a></dt>
+<dd><p>Атомарно сохраняет звуки и настройки в JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sounds</strong> (<em>list</em><em>[</em><a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a><em>]</em>)</p></li>
+<li><p><strong>settings</strong> (<em>dict</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sound_manager">
+<span id="id3"></span><h2>Библиотека звуков<a class="headerlink" href="#module-sound_manager" title="Ссылка на этот заголовок"></a></h2>
+<p>SoundManager: бизнес-логика библиотеки звуков (Model).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sound_manager.SoundManager">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">sound_manager.</span></span><span class="sig-name descname"><span class="pre">SoundManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Бизнес-логика библиотеки звуков (Model).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>repo</strong> (<a class="reference internal" href="#config_repository.ConfigRepository" title="config_repository.ConfigRepository"><em>ConfigRepository</em></a>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.get"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.get" title="Ссылка на это определение"></a></dt>
+<dd><p>Находит звук по идентификатору.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.find_by_hotkey">
+<span class="sig-name descname"><span class="pre">find_by_hotkey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.find_by_hotkey"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.find_by_hotkey" title="Ссылка на это определение"></a></dt>
+<dd><p>Находит звук, назначенный на указанную клавишу.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>)</p></li>
+<li><p><strong>exclude_id</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.categories">
+<span class="sig-name descname"><span class="pre">categories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.categories"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.categories" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает отсортированный список категорий.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.next_free_hotkey">
+<span class="sig-name descname"><span class="pre">next_free_hotkey</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.next_free_hotkey"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.next_free_hotkey" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает первую свободную клавишу для автоназначения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hotkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Без</span> <span class="pre">категории'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.add"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.add" title="Ссылка на это определение"></a></dt>
+<dd><p>Добавляет новый звук в библиотеку и сохраняет изменения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>path</strong> (<em>str</em>)</p></li>
+<li><p><strong>hotkey</strong> (<em>str</em>)</p></li>
+<li><p><strong>category</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.remove"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.remove" title="Ссылка на это определение"></a></dt>
+<dd><p>Удаляет звук из библиотеки по идентификатору.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fields</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.update"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.update" title="Ссылка на это определение"></a></dt>
+<dd><p>Изменить поля звука.</p>
+<p>silent=True — только сохранить в JSON, не перестраивая карточки:
+так делают встроенные регуляторы на главном экране, чтобы не сбрасывать
+прокрутку и не удалять виджет прямо под курсором.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>silent</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.set_settings">
+<span class="sig-name descname"><span class="pre">set_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.set_settings"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.set_settings" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновляет настройки приложения и сохраняет их.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sound_manager.SoundManager.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sound_manager.html#SoundManager.save"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#sound_manager.SoundManager.save" title="Ссылка на это определение"></a></dt>
+<dd><p>Сохраняет библиотеку и настройки через репозиторий.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-audio_engine">
+<span id="id4"></span><h2>Аудиодвижок<a class="headerlink" href="#module-audio_engine" title="Ссылка на этот заголовок"></a></h2>
+<p>AudioEngine (Singleton): воспроизведение через pygame.mixer.</p>
+<p>Сигналы (Observer) сообщают интерфейсу о начале, конце и текущей позиции звука.
+Маленький буфер (512 сэмплов ≈ 12 мс) обеспечивает задержку заметно меньше 100 мс.</p>
+<p>Перемотка реализована без внешних зависимостей: у <cite>pygame.mixer.Sound</cite> нет
+позиции, поэтому нужный фрагмент вырезается из сырых PCM-данных (<cite>Sound.get_raw</cite>)
+и проигрывается как отдельный Sound с начала фрагмента.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">audio_engine.</span></span><span class="sig-name descname"><span class="pre">AudioEngine</span></span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Движок воспроизведения на pygame.mixer (Singleton).</p>
+<p>Управляет каналами, громкостью, перемоткой и зацикливанием, сообщает
+интерфейсу о событиях через сигналы Qt.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.instance">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.instance"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.instance" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает единственный экземпляр движка.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#audio_engine.AudioEngine" title="audio_engine.AudioEngine"><em>AudioEngine</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.play">
+<span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.play"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.play" title="Ссылка на это определение"></a></dt>
+<dd><p>Запускает звук с учётом настроек наложения и позиции.</p>
+<p>Args:
+sound: Звук из библиотеки.</p>
+<p>Returns:
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, если воспроизведение началось.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound</strong> (<a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.stop"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.stop" title="Ссылка на это определение"></a></dt>
+<dd><p>Останавливает звук по идентификатору.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.stop_all">
+<span class="sig-name descname"><span class="pre">stop_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.stop_all"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.stop_all" title="Ссылка на это определение"></a></dt>
+<dd><p>Останавливает все воспроизводимые звуки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.is_playing">
+<span class="sig-name descname"><span class="pre">is_playing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.is_playing"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.is_playing" title="Ссылка на это определение"></a></dt>
+<dd><p>Проверяет, воспроизводится ли звук сейчас.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.position">
+<span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.position"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.position" title="Ссылка на это определение"></a></dt>
+<dd><p>Текущая позиция звука в секундах.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.duration">
+<span class="sig-name descname"><span class="pre">duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.duration"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.duration" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает известную длительность звука в секундах.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.load_duration">
+<span class="sig-name descname"><span class="pre">load_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.load_duration"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.load_duration" title="Ссылка на это определение"></a></dt>
+<dd><p>Длительность звука (при необходимости загружает файл). 0 при ошибке.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound</strong> (<a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.seek">
+<span class="sig-name descname"><span class="pre">seek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fraction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.seek"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.seek" title="Ссылка на это определение"></a></dt>
+<dd><p>Перемотать звук на долю <cite>fraction</cite> (0..1) его длительности.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound</strong> (<a class="reference internal" href="#models.Sound" title="models.Sound"><em>Sound</em></a>)</p></li>
+<li><p><strong>fraction</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.set_loop">
+<span class="sig-name descname"><span class="pre">set_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.set_loop"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.set_loop" title="Ссылка на это определение"></a></dt>
+<dd><p>Включить/выключить цикл без перезапуска и без «прыжка» позиции.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>loop</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.set_master_volume">
+<span class="sig-name descname"><span class="pre">set_master_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.set_master_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.set_master_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Устанавливает общую громкость в процентах (0–100).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>percent</strong> (<em>int</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.set_sound_volume">
+<span class="sig-name descname"><span class="pre">set_sound_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.set_sound_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.set_sound_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Устанавливает громкость отдельного звука (0.0–1.0).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>volume</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.invalidate">
+<span class="sig-name descname"><span class="pre">invalidate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.invalidate"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.invalidate" title="Ссылка на это определение"></a></dt>
+<dd><p>Сбрасывает кэш звука (например, перед удалением).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_engine.AudioEngine.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/audio_engine.html#AudioEngine.shutdown"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#audio_engine.AudioEngine.shutdown" title="Ссылка на это определение"></a></dt>
+<dd><p>Останавливает все каналы и освобождает аудиосистему.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-keys">
+<span id="id5"></span><h2>Горячие клавиши<a class="headerlink" href="#module-keys" title="Ссылка на этот заголовок"></a></h2>
+<p>Приведение клавиш из Qt и pynput к единому виду („q“, „1“, „f5“, „space“).</p>
+<p>Русская раскладка переводится в латиницу по положению клавиши,
+поэтому горячая клавиша Q работает и при включённой русской раскладке.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="keys.from_qt_event">
+<span class="sig-prename descclassname"><span class="pre">keys.</span></span><span class="sig-name descname"><span class="pre">from_qt_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/keys.html#from_qt_event"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#keys.from_qt_event" title="Ссылка на это определение"></a></dt>
+<dd><p>Клавиша из QKeyEvent. Пустая строка, если это не горячая клавиша.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="keys.from_pynput">
+<span class="sig-prename descclassname"><span class="pre">keys.</span></span><span class="sig-name descname"><span class="pre">from_pynput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/keys.html#from_pynput"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#keys.from_pynput" title="Ссылка на это определение"></a></dt>
+<dd><p>Приводит клавишу pynput к единому виду („q“, „1“, „f5“, „space“).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="keys.pretty">
+<span class="sig-prename descclassname"><span class="pre">keys.</span></span><span class="sig-name descname"><span class="pre">pretty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/keys.html#pretty"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#keys.pretty" title="Ссылка на это определение"></a></dt>
+<dd><p>Как показывать клавишу на карточке.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p id="module-hotkey_manager">HotkeyManager: глобальные горячие клавиши (pynput) для Windows.</p>
+<p>Клавиши работают, когда окно приложения не в фокусе; при свёрнутом окне
+программа продолжает реагировать на назначенные клавиши.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="hotkey_manager.HotkeyManager">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">hotkey_manager.</span></span><span class="sig-name descname"><span class="pre">HotkeyManager</span></span><a class="reference internal" href="_modules/hotkey_manager.html#HotkeyManager"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#hotkey_manager.HotkeyManager" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>Перехват глобальных горячих клавиш через pynput.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="hotkey_manager.HotkeyManager.active">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">active</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></span><a class="headerlink" href="#hotkey_manager.HotkeyManager.active" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает <code class="docutils literal notranslate"><span class="pre">True</span></code>, если перехват клавиш запущен.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hotkey_manager.HotkeyManager.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hotkey_manager.html#HotkeyManager.start"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#hotkey_manager.HotkeyManager.start" title="Ссылка на это определение"></a></dt>
+<dd><p>Запускает слушатель клавиатуры.</p>
+<p>Returns:
+<code class="docutils literal notranslate"><span class="pre">True</span></code> при успешном запуске (pynput доступен).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hotkey_manager.HotkeyManager.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hotkey_manager.html#HotkeyManager.stop"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#hotkey_manager.HotkeyManager.stop" title="Ссылка на это определение"></a></dt>
+<dd><p>Останавливает слушатель клавиатуры.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-main_window">
+<span id="id6"></span><h2>Интерфейс и диалоги<a class="headerlink" href="#module-main_window" title="Ссылка на этот заголовок"></a></h2>
+<p>MainWindow (View + Controller): два экрана по макету Figma — главный и «Библиотека».</p>
+<p>На главном экране карточка звука содержит встроенные регуляторы:
+перемотку (полоса прогресса), зацикливание и громкость конкретного звука.
+Список карточек прокручивается колесом мыши, а сетка всегда продолжается вниз,
+поэтому прокрутка работает и при небольшом количестве звуков.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main_window.format_time">
+<span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">format_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#format_time"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.format_time" title="Ссылка на это определение"></a></dt>
+<dd><p>Секунды → «м:сс».</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>float</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.NoWheelSlider">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">NoWheelSlider</span></span><a class="reference internal" href="_modules/main_window.html#NoWheelSlider"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.NoWheelSlider" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QSlider</span></code></p>
+<p>Слайдер, не перехватывающий колесо мыши: колесо продолжает прокручивать карточки.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.NoWheelSlider.wheelEvent">
+<span class="sig-name descname"><span class="pre">wheelEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWheelEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#NoWheelSlider.wheelEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.NoWheelSlider.wheelEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.SeekSlider">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">SeekSlider</span></span><a class="reference internal" href="_modules/main_window.html#SeekSlider"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SeekSlider" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <a class="reference internal" href="#main_window.NoWheelSlider" title="main_window.NoWheelSlider"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoWheelSlider</span></code></a></p>
+<p>Полоса перемотки: клик в любом месте сразу перематывает звук.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SeekSlider.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SeekSlider.mousePressEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SeekSlider.mousePressEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SeekSlider.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SeekSlider.mouseMoveEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SeekSlider.mouseMoveEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SeekSlider.mouseReleaseEvent">
+<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SeekSlider.mouseReleaseEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SeekSlider.mouseReleaseEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.ElidedLabel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">ElidedLabel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#ElidedLabel"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.ElidedLabel" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QLabel</span></code></p>
+<p>QLabel, обрезающий длинный текст многоточием и показывающий полный текст в подсказке.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.ElidedLabel.set_full_text">
+<span class="sig-name descname"><span class="pre">set_full_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#ElidedLabel.set_full_text"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.ElidedLabel.set_full_text" title="Ссылка на это определение"></a></dt>
+<dd><p>Устанавливает полный текст и обрезает его по ширине.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.ElidedLabel.resizeEvent">
+<span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QResizeEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#ElidedLabel.resizeEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.ElidedLabel.resizeEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.CardScrollArea">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">CardScrollArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#CardScrollArea"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.CardScrollArea" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QScrollArea</span></code></p>
+<p>Область со списком карточек: прокрутка колесом «по пикселям», без горизонтальной полосы.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_window.CardScrollArea.PIXELS_PER_NOTCH">
+<span class="sig-name descname"><span class="pre">PIXELS_PER_NOTCH</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">90</span></span><a class="headerlink" href="#main_window.CardScrollArea.PIXELS_PER_NOTCH" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.CardScrollArea.wheelEvent">
+<span class="sig-name descname"><span class="pre">wheelEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWheelEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#CardScrollArea.wheelEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.CardScrollArea.wheelEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.CategoryButton">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">CategoryButton</span></span><a class="reference internal" href="_modules/main_window.html#CategoryButton"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.CategoryButton" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QPushButton</span></code></p>
+<p>Кнопка «Все категории ▼» с выпадающим меню.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.CategoryButton.currentText">
+<span class="sig-name descname"><span class="pre">currentText</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#CategoryButton.currentText"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.CategoryButton.currentText" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает выбранную категорию.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.CategoryButton.set_items">
+<span class="sig-name descname"><span class="pre">set_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#CategoryButton.set_items"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.CategoryButton.set_items" title="Ссылка на это определение"></a></dt>
+<dd><p>Задаёт список категорий для выпадающего меню.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.Logo">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">Logo</span></span><a class="reference internal" href="_modules/main_window.html#Logo"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.Logo" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>Логотип: мятный квадрат с белыми дугами. Клик — на главный экран.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.Logo.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#Logo.mousePressEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.Logo.mousePressEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.Logo.paintEvent">
+<span class="sig-name descname"><span class="pre">paintEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QPaintEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#Logo.paintEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.Logo.paintEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.SoundCard">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">SoundCard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_hotkey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QFrame</span></code></p>
+<p>Карточка звука.</p>
+<p>На главном экране (controls=True) внутри карточки есть перемотка,
+кнопка зацикливания и громкость. sound=None — пустой слот.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QMouseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.mousePressEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.mousePressEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.set_playing">
+<span class="sig-name descname"><span class="pre">set_playing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playing</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.set_playing"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.set_playing" title="Ссылка на это определение"></a></dt>
+<dd><p>Показывает состояние воспроизведения карточки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>playing</strong> (<em>bool</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.set_duration">
+<span class="sig-name descname"><span class="pre">set_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.set_duration"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.set_duration" title="Ссылка на это определение"></a></dt>
+<dd><p>Устанавливает длительность звука для полосы перемотки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>duration</strong> (<em>float</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.set_progress">
+<span class="sig-name descname"><span class="pre">set_progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.set_progress"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.set_progress" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновляет позицию воспроизведения на карточке.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<em>float</em>)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.set_volume">
+<span class="sig-name descname"><span class="pre">set_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.set_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.set_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Показать громкость звука (0..1) без сигнала об изменении.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>volume</strong> (<em>float</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundCard.update_from_sound">
+<span class="sig-name descname"><span class="pre">update_from_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundCard.update_from_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundCard.update_from_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновить карточку после изменения модели без пересборки сетки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.SoundsPage">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">SoundsPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>Экран со списком звуков. library=False — главный экран, True — «Библиотека».</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>library</strong> (<em>bool</em>)</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_window.SoundsPage.cards">
+<span class="sig-name descname"><span class="pre">cards</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#main_window.SoundCard" title="main_window.SoundCard"><span class="pre">SoundCard</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#main_window.SoundsPage.cards" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_window.SoundsPage.now_rows">
+<span class="sig-name descname"><span class="pre">now_rows</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">QFrame</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#main_window.SoundsPage.now_rows" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.resizeEvent">
+<span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QResizeEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.resizeEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.resizeEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.set_categories">
+<span class="sig-name descname"><span class="pre">set_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.set_categories"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.set_categories" title="Ссылка на это определение"></a></dt>
+<dd><p>Передаёт странице список доступных категорий.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>categories</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.populate">
+<span class="sig-name descname"><span class="pre">populate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_playing</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.populate"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.populate" title="Ссылка на это определение"></a></dt>
+<dd><p>Заполняет страницу звуками и перерисовывает сетку.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preserve_scroll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.render"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.render" title="Ссылка на это определение"></a></dt>
+<dd><p>Перестраивает сетку карточек с учётом фильтров и размера окна.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>preserve_scroll</strong> (<em>bool</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.set_duration">
+<span class="sig-name descname"><span class="pre">set_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.set_duration"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.set_duration" title="Ссылка на это определение"></a></dt>
+<dd><p>Сохраняет и показывает длительность звука.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.set_progress">
+<span class="sig-name descname"><span class="pre">set_progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.set_progress"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.set_progress" title="Ссылка на это определение"></a></dt>
+<dd><p>Передаёт позицию воспроизведения карточке звука.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>position</strong> (<em>float</em>)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.sync_sound">
+<span class="sig-name descname"><span class="pre">sync_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.sync_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.sync_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновляет карточку после изменения модели без пересборки сетки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.set_master_volume">
+<span class="sig-name descname"><span class="pre">set_master_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.set_master_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.set_master_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Показывает общую громкость на главном экране.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.mark_started">
+<span class="sig-name descname"><span class="pre">mark_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_callback</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.mark_started"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.mark_started" title="Ссылка на это определение"></a></dt>
+<dd><p>Отмечает звук как играющий и добавляет его в «Сейчас играет».</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.SoundsPage.mark_finished">
+<span class="sig-name descname"><span class="pre">mark_finished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#SoundsPage.mark_finished"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.SoundsPage.mark_finished" title="Ссылка на это определение"></a></dt>
+<dd><p>Снимает подсветку и убирает звук из «Сейчас играет».</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_window.MainWindow">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">main_window.</span></span><span class="sig-name descname"><span class="pre">MainWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hotkeys</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<p>Главное окно приложения и контроллер взаимодействия компонентов.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>manager</strong> (<a class="reference internal" href="#sound_manager.SoundManager" title="sound_manager.SoundManager"><em>SoundManager</em></a>)</p></li>
+<li><p><strong>engine</strong> (<a class="reference internal" href="#audio_engine.AudioEngine" title="audio_engine.AudioEngine"><em>AudioEngine</em></a>)</p></li>
+<li><p><strong>hotkeys</strong> (<a class="reference internal" href="#hotkey_manager.HotkeyManager" title="hotkey_manager.HotkeyManager"><em>HotkeyManager</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.show_main">
+<span class="sig-name descname"><span class="pre">show_main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.show_main"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.show_main" title="Ссылка на это определение"></a></dt>
+<dd><p>Переключает на главный экран.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.show_library">
+<span class="sig-name descname"><span class="pre">show_library</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.show_library"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.show_library" title="Ссылка на это определение"></a></dt>
+<dd><p>Переключает на экран «Библиотека».</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.refresh"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.refresh" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновляет обе страницы по данным менеджера библиотеки.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.toggle">
+<span class="sig-name descname"><span class="pre">toggle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.toggle"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.toggle" title="Ссылка на это определение"></a></dt>
+<dd><p>Запускает или останавливает звук по его идентификатору.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.on_card_clicked">
+<span class="sig-name descname"><span class="pre">on_card_clicked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.on_card_clicked"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.on_card_clicked" title="Ссылка на это определение"></a></dt>
+<dd><p>Обрабатывает клик по карточке звука или пустому слоту.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.on_started">
+<span class="sig-name descname"><span class="pre">on_started</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.on_started"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.on_started" title="Ссылка на это определение"></a></dt>
+<dd><p>Обрабатывает сигнал начала воспроизведения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.on_finished">
+<span class="sig-name descname"><span class="pre">on_finished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.on_finished"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.on_finished" title="Ссылка на это определение"></a></dt>
+<dd><p>Обрабатывает сигнал завершения воспроизведения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.on_progress">
+<span class="sig-name descname"><span class="pre">on_progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.on_progress"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.on_progress" title="Ссылка на это определение"></a></dt>
+<dd><p>Передаёт позицию воспроизведения в карточки звуков.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>position</strong> (<em>float</em>)</p></li>
+<li><p><strong>duration</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.seek_sound">
+<span class="sig-name descname"><span class="pre">seek_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fraction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.seek_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.seek_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Перематывает звук на заданную долю длительности.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>fraction</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.set_sound_loop">
+<span class="sig-name descname"><span class="pre">set_sound_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.set_sound_loop"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.set_sound_loop" title="Ссылка на это определение"></a></dt>
+<dd><p>Включает или выключает зацикливание звука.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>state</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.preview_sound_volume">
+<span class="sig-name descname"><span class="pre">preview_sound_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.preview_sound_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.preview_sound_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Применяет громкость звука без сохранения в файл.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>volume</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.commit_sound_volume">
+<span class="sig-name descname"><span class="pre">commit_sound_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.commit_sound_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.commit_sound_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Сохраняет громкость звука в конфигурацию.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>volume</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.preview_master_volume">
+<span class="sig-name descname"><span class="pre">preview_master_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.preview_master_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.preview_master_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Применяет общую громкость без сохранения в файл.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>percent</strong> (<em>int</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.commit_master_volume">
+<span class="sig-name descname"><span class="pre">commit_master_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.commit_master_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.commit_master_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Сохраняет общую громкость в настройки.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>percent</strong> (<em>int</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.handle_key">
+<span class="sig-name descname"><span class="pre">handle_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.handle_key"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.handle_key" title="Ссылка на это определение"></a></dt>
+<dd><p>Обрабатывает нажатие горячей клавиши (Esc — паника).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.keyPressEvent">
+<span class="sig-name descname"><span class="pre">keyPressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.keyPressEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.keyPressEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.on_global_key">
+<span class="sig-name descname"><span class="pre">on_global_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.on_global_key"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.on_global_key" title="Ссылка на это определение"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.add_sound">
+<span class="sig-name descname"><span class="pre">add_sound</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.add_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.add_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Открывает диалог добавления звука.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.change_hotkey">
+<span class="sig-name descname"><span class="pre">change_hotkey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.change_hotkey"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.change_hotkey" title="Ссылка на это определение"></a></dt>
+<dd><p>Открывает диалог назначения горячей клавиши.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.rename_sound">
+<span class="sig-name descname"><span class="pre">rename_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.rename_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.rename_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Переименовывает звук через диалог ввода.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.change_volume">
+<span class="sig-name descname"><span class="pre">change_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.change_volume"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.change_volume" title="Ссылка на это определение"></a></dt>
+<dd><p>Меняет громкость звука через диалог ввода.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.toggle_loop">
+<span class="sig-name descname"><span class="pre">toggle_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.toggle_loop"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.toggle_loop" title="Ссылка на это определение"></a></dt>
+<dd><p>Переключает зацикливание звука (обёртка для контекстного меню).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>state</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.remove_sound">
+<span class="sig-name descname"><span class="pre">remove_sound</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.remove_sound"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.remove_sound" title="Ссылка на это определение"></a></dt>
+<dd><p>Удаляет звук из библиотеки после подтверждения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sound_id</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.show_context_menu">
+<span class="sig-name descname"><span class="pre">show_context_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sound_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.show_context_menu"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.show_context_menu" title="Ссылка на это определение"></a></dt>
+<dd><p>Показывает контекстное меню карточки звука.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sound_id</strong> (<em>str</em>)</p></li>
+<li><p><strong>pos</strong> (<em>QPoint</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.open_settings">
+<span class="sig-name descname"><span class="pre">open_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.open_settings"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.open_settings" title="Ссылка на это определение"></a></dt>
+<dd><p>Открывает окно настроек.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.apply_settings">
+<span class="sig-name descname"><span class="pre">apply_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.apply_settings"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.apply_settings" title="Ссылка на это определение"></a></dt>
+<dd><p>Применяет настройки к движку и горячим клавишам.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_window.MainWindow.closeEvent">
+<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QCloseEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_window.html#MainWindow.closeEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main_window.MainWindow.closeEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p id="module-dialogs">Диалоги: добавление звука, назначение клавиши, настройки, библиотека.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="dialogs.HotkeyEdit">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dialogs.</span></span><span class="sig-name descname"><span class="pre">HotkeyEdit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">placeholder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Нажмите</span> <span class="pre">клавишу</span> <span class="pre">для</span> <span class="pre">назначения'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyEdit"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyEdit" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QLineEdit</span></code></p>
+<p>Поле, которое запоминает нажатую клавишу. Backspace/Delete — очистить.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>placeholder</strong> (<em>str</em>)</p></li>
+<li><p><strong>key</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeyEdit.set_key">
+<span class="sig-name descname"><span class="pre">set_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyEdit.set_key"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyEdit.set_key" title="Ссылка на это определение"></a></dt>
+<dd><p>Устанавливает и отображает назначенную клавишу.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeyEdit.keyPressEvent">
+<span class="sig-name descname"><span class="pre">keyPressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QKeyEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyEdit.keyPressEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyEdit.keyPressEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dialogs.</span></span><span class="sig-name descname"><span class="pre">AddSoundDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Диалог добавления нового звука в библиотеку.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manager</strong> (<a class="reference internal" href="#sound_manager.SoundManager" title="sound_manager.SoundManager"><em>SoundManager</em></a>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.choose_file">
+<span class="sig-name descname"><span class="pre">choose_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.choose_file"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.choose_file" title="Ссылка на это определение"></a></dt>
+<dd><p>Открывает диалог выбора аудиофайла.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.set_path">
+<span class="sig-name descname"><span class="pre">set_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.set_path"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.set_path" title="Ссылка на это определение"></a></dt>
+<dd><p>Заполняет путь к файлу и подставляет название из имени файла.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.dragEnterEvent">
+<span class="sig-name descname"><span class="pre">dragEnterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QDragEnterEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.dragEnterEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.dragEnterEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.dropEvent">
+<span class="sig-name descname"><span class="pre">dropEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QDropEvent</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="positional-only-separator o"><abbr title="Positional-only parameter separator (PEP 570)"><span class="pre">/</span></abbr></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.dropEvent"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.dropEvent" title="Ссылка на это определение"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.validate"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.validate" title="Ссылка на это определение"></a></dt>
+<dd><p>Проверяет введённые данные и закрывает диалог при успехе.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.AddSoundDialog.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#AddSoundDialog.values"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.AddSoundDialog.values" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает значения полей диалога в виде словаря.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dialogs.HotkeyDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dialogs.</span></span><span class="sig-name descname"><span class="pre">HotkeyDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyDialog"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyDialog" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Диалог назначения горячей клавиши существующему звуку.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manager</strong> (<a class="reference internal" href="#sound_manager.SoundManager" title="sound_manager.SoundManager"><em>SoundManager</em></a>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeyDialog.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyDialog.validate"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyDialog.validate" title="Ссылка на это определение"></a></dt>
+<dd><p>Проверяет, что клавиша не занята другим звуком.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeyDialog.key">
+<span class="sig-name descname"><span class="pre">key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeyDialog.key"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeyDialog.key" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает выбранную пользователем клавишу.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dialogs.SettingsDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dialogs.</span></span><span class="sig-name descname"><span class="pre">SettingsDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">settings</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_hotkeys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#SettingsDialog"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.SettingsDialog" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Диалог настроек воспроизведения и горячих клавиш.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>settings</strong> (<em>dict</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.SettingsDialog.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#SettingsDialog.values"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.SettingsDialog.values" title="Ссылка на это определение"></a></dt>
+<dd><p>Возвращает настройки из полей диалога.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dialogs.HotkeysListDialog">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">dialogs.</span></span><span class="sig-name descname"><span class="pre">HotkeysListDialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeysListDialog"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeysListDialog" title="Ссылка на это определение"></a></dt>
+<dd><p>Базовые классы: <code class="xref py py-class docutils literal notranslate"><span class="pre">QDialog</span></code></p>
+<p>Управление клавишами: выбрать звук и открыть окно «Назначение клавиши».</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeysListDialog.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeysListDialog.refresh"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeysListDialog.refresh" title="Ссылка на это определение"></a></dt>
+<dd><p>Обновляет список звуков и назначенных им клавиш.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dialogs.HotkeysListDialog.assign">
+<span class="sig-name descname"><span class="pre">assign</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dialogs.html#HotkeysListDialog.assign"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#dialogs.HotkeysListDialog.assign" title="Ссылка на это определение"></a></dt>
+<dd><p>Открывает диалог назначения клавиши для выбранного звука.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-theme">
+<span id="id7"></span><h2>Тема оформления<a class="headerlink" href="#module-theme" title="Ссылка на этот заголовок"></a></h2>
+<p>Тёмная тема в стиле макета Figma.</p>
+</section>
+<section id="module-main">
+<span id="id8"></span><h2>Точка входа<a class="headerlink" href="#module-main" title="Ссылка на этот заголовок"></a></h2>
+<p>Soundboard — точка входа. Запуск: python main.py</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="main.resource_path">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">resource_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#resource_path"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main.resource_path" title="Ссылка на это определение"></a></dt>
+<dd><p>Путь к ресурсу и в исходниках, и внутри собранного PyInstaller бинарника.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Параметры<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>relative</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Тип результата<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Path</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.main">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/main.html#main"><span class="viewcode-link"><span class="pre">[исходный</span> <span class="pre">код]</span></span></a><a class="headerlink" href="#main.main" title="Ссылка на это определение"></a></dt>
+<dd><p>Создаёт приложение, применяет тему и запускает главное окно.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Тип результата<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Нижняя область">
+        <a href="examples.html" class="btn btn-neutral float-left" title="Примеры использования" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Предыдущая</a>
+        <a href="support.html" class="btn btn-neutral float-right" title="Поддержка и развитие проекта" accesskey="n" rel="next">Следующая <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Авторские права 2026, Загайнов Н. А.. 
+      <span class="lastupdated">Обновлено: 05.11.2026.
+      </span></p>
+  </div>
+
+  Собрано при помощи <a href="https://www.sphinx-doc.org/">Sphinx</a> с использованием
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">темы,</a>
+    предоставленной <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
